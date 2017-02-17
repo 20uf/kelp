@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+   <script
+            src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+            crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <script src="https://use.fontawesome.com/ebe910d3d1.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .navbar-header {
+            float: left;
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+        }
+        .navbar-brand {float:none;}
+
+
+        .introduction {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            height: 720px;
+            padding: 0 15px;
+            max-height: 100vh;
+            background-color: #666;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            background-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0) 42%,
+            rgba(0, 0, 0, 0.65) 100%),
+            url(/images/kitchen.jpg);
+        }
+
+        .intro_title {
+            width: 100%;
+            text-align: center;
+            font-size: 26px;
+            font-weight: 400;
+            color: #fff;
+        }
+
+        .introduction__tick {
+            width: 128px;
+        }
+
+        .content {
+            padding: 0;
+            position: relative;
+        }
+
+        .content .introduction__subscribe {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            margin: 50px 70px;
+            padding: 0;
+            max-width: 600px;
+            border-radius: 4px;
+            text-align: center;
+            color: #fff!important;
+            background: 0 0;
+        }
+    </style>
+
+    {#<script src="{{ asset('js/bundled.min.js') }}"></script>#}
+    <title>{% block title %}Kelp{% endblock title %}</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{ path('homepage') }}">KELP</a>
+        </div>
+    </div>
+</nav>
+
+<div class="content">
+    <div class="introduction">
+        <svg class="introduction__tick drawn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="256px" height="256px" viewBox="0 0 64 64"><g transform="translate(0, 0)">
+                <polyline data-color="color-2" fill="none" stroke="#3B8DD0" stroke-width="4" stroke-linecap="square" stroke-miterlimit="10" points="
+18,34 26,42 46,22 " stroke-linejoin="miter"></polyline>
+                <circle fill="none" stroke="#5cb85c" stroke-width="4" stroke-linecap="square" stroke-miterlimit="10" cx="32" cy="32" r="30" stroke-linejoin="miter"></circle>
+                <circle class="circ path" fill="#5cb85c" stroke="none" stroke-width="4" stroke-linecap="square" stroke-miterlimit="10" cx="32" cy="32" r="30" stroke-linejoin="miter"></circle>
+                <polyline class="tick path" data-color="color-2" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="square" stroke-miterlimit="10" points="
+18,34 26,42 46,22 " stroke-linejoin="miter"></polyline>
+            </g></svg>
+        <h2 class="intro_title">
+            Kelp est le premier site dédié à votre Cuisine.<br>
+            Organisez, Cuisinez des recettes avec ce dont vous disposez.
+        </h2>
+
+        <div class="introduction__subscribe">
+            <h2>Rejoignez Vous aussi l aventure Kelp !!</h2>
+            <div>
+                <a href="/inscription/?direct" class="btn btn-success pull-left">
+                    Créer un compte
+                </a>
+                <a href="/inscription/?direct" class="btn btn-success pull-right">
+                    Identification
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
