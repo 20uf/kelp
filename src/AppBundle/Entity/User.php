@@ -15,6 +15,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity
+ * @ORM\Table(name="app_user")
  * @UniqueEntity(fields="email", message="Email already taken")
  * @UniqueEntity(fields="username", message="Username already taken")
  */
@@ -61,18 +62,17 @@ class User implements UserInterface
      */
     private $role;
 
-    public function getRoles()
-    {
-        // TODO: Implement getRoles() method.
-    }
-
-    // other properties and methods
+    /**
+     *
+     * @ORM\Column(type="boolean")
+     */
+    private $active;
 
     public function getEmail()
     {
         return $this->email;
     }
-
+    
     public function setEmail($email)
     {
         $this->email = $email;
@@ -119,4 +119,55 @@ class User implements UserInterface
     {
         // TODO: Implement eraseCredentials() method.
     }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set role
+     *
+     * @param string $role
+     *
+     * @return User
+     */
+    public function setRoles($role)
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * Get role
+     *
+     * @return string
+     */
+    public function getRoles()
+    {
+        return [$this->role];
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * @param mixed $active
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+    }
+
 }

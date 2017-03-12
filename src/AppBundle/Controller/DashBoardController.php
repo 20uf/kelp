@@ -19,7 +19,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DashBoardController extends Controller
 {
     /**
-     * @Route("/", name="homeboard")
+     * @Route("/", name="dashboard")
      */
     public function indexAction()
     {
