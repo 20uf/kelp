@@ -1,0 +1,8 @@
+services:
+    kelp.type_storage.processor:
+        class: Kelp\AppBundle\Processor\SettingTypeStorageProcessor
+        arguments: ["@event_dispatcher"]
+
+    kelp.user.processor:
+        class: Kelp\AppBundle\Processor\SettingUserProcessor
+        arguments: ["@event_dispatcher"]

@@ -1,5 +1,5 @@
 {
-    "name": "groot/kelp",
+    "name": "groot/kelpdp",
     "license": "proprietary",
     "type": "project",
     "autoload": {
@@ -28,11 +28,16 @@
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
-        "twig/twig": "^1.0||^2.0"
+        "twig/twig": "^1.0||^2.0",
+        "friendsofsymfony/user-bundle": "~2.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^3.0"
+        "symfony/phpunit-bridge": "^3.0",
+        "sebastian/phpcpd" : "^3.0@stable",
+        "squizlabs/php_codesniffer" : ">=2.8@stable",
+        "phpmd/phpmd" : "^2.6@stable",
+        "phpunit/phpunit" : "^6.0@stable"
     },
     "scripts": {
         "symfony-scripts": [

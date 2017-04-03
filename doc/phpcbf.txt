@@ -1,0 +1,31 @@
+Changing into directory /Users/groot/workSpace/kelpdp/src/Kelp/AppBundle/Controller
+Processing DashboardController.php [PHP => 64 tokens in 13 lines]... DONE in 1ms (0 fixable violations)
+Processing SettingController.php [PHP => 181 tokens in 35 lines]... DONE in 2ms (0 fixable violations)
+Changing into directory /Users/groot/workSpace/kelpdp/src/Kelp/AppBundle/DependencyInjection
+Processing Configuration.php [PHP => 182 tokens in 34 lines]... DONE in 1ms (0 fixable violations)
+Processing KelpAppExtension.php [PHP => 207 tokens in 30 lines]... DONE in 2ms (0 fixable violations)
+Changing into directory /Users/groot/workSpace/kelpdp/src/Kelp/AppBundle/DTO
+Processing SearchUserDTO.php [PHP => 76 tokens in 17 lines]... DONE in 1ms (0 fixable violations)
+Processing StorageDTO.php [PHP => 40 tokens in 12 lines]... DONE in 0ms (0 fixable violations)
+Changing into directory /Users/groot/workSpace/kelpdp/src/Kelp/AppBundle/Entity
+Processing Product.php [PHP => 40 tokens in 12 lines]... DONE in 0ms (0 fixable violations)
+Changing into directory /Users/groot/workSpace/kelpdp/src/Kelp/AppBundle/Entity/Repository
+Processing TypeStorageRepository.php [PHP => 42 tokens in 12 lines]... DONE in 0ms (0 fixable violations)
+Changing into directory /Users/groot/workSpace/kelpdp/src/Kelp/AppBundle/Entity
+Processing Storage.php [PHP => 40 tokens in 12 lines]... DONE in 0ms (0 fixable violations)
+Processing TypeProduct.php [PHP => 40 tokens in 12 lines]... DONE in 0ms (0 fixable violations)
+Processing TypeStorage.php [PHP => 409 tokens in 88 lines]... DONE in 3ms (0 fixable violations)
+Processing User.php [PHP => 120 tokens in 26 lines]... DONE in 1ms (0 fixable violations)
+Changing into directory /Users/groot/workSpace/kelpdp/src/Kelp/AppBundle/Form
+Processing SearchUserType.php [PHP => 211 tokens in 32 lines]... DONE in 3ms (0 fixable violations)
+Changing into directory /Users/groot/workSpace/kelpdp/src/Kelp/AppBundle
+Processing KelpAppBundle.php [PHP => 57 tokens in 13 lines]... DONE in 1ms (0 fixable violations)
+Changing into directory /Users/groot/workSpace/kelpdp/src/Kelp/AppBundle/Processor
+Processing ProcessorInterface.php [PHP => 49 tokens in 12 lines]... DONE in 1ms (0 fixable violations)
+Processing SettingTypeStorageProcessor.php [PHP => 165 tokens in 35 lines]... DONE in 2ms (0 fixable violations)
+Processing SettingUserProcessor.php [PHP => 165 tokens in 35 lines]... DONE in 2ms (0 fixable violations)
+Changing into directory /Users/groot/workSpace/kelpdp/src/Kelp/AppBundle/Tests/Processor
+Processing SettingTypeStorageProcessorTest.php [PHP => 174 tokens in 26 lines]... DONE in 3ms (0 fixable violations)
+Processing SettingUserProcessorTest.php [PHP => 174 tokens in 26 lines]... DONE in 2ms (0 fixable violations)
+No fixable errors were found
+Time: 42ms; Memory: 4Mb

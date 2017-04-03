@@ -1,0 +1,7 @@
+kelp_app_homepage:
+    path:     /
+    defaults: { _controller: KelpAppBundle:Dashboard:index }
+
+kelp_setting_type_storage:
+    path:     /setting/type/storage
+    defaults: { _controller: KelpAppBundle:Setting:TypeStorage }
