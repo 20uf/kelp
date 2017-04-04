@@ -2,6 +2,7 @@
 namespace Kelp\AppBundle\Processor;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\GenericEvent;
 
 /**
  * Class SettingTypeStorageProcessor
@@ -30,6 +31,12 @@ class SettingUserProcessor implements ProcessorInterface
      */
     public function process()
     {
-        return ['processor' => 'SettingUser'];
+        $event = new GenericEvent();
+        $this->eventDispatcher->dispatch('kelp.app.setting_user.processor.process', $event);
+
+        return array_merge(
+            $event->getArguments(),
+            ['processor' => 'SettingUser']
+        );
     }
 }

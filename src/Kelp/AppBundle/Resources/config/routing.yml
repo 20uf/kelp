@@ -5,3 +5,7 @@ kelp_app_homepage:
 kelp_setting_type_storage:
     path:     /setting/type/storage
     defaults: { _controller: KelpAppBundle:Setting:TypeStorage }
+
+kelp_setting_user:
+    path:     /setting/user
+    defaults: { _controller: KelpAppBundle:Setting:User }

@@ -19,11 +19,14 @@
                     <a href="{{ path('kelp_app_homepage') }}">Dashboard</a>
                 </li>
                 {% endif %}
-                {% if is_granted("ROLE_ADMIN") %}
-                    <li {{ currentPath == path('kelp_settig_type_storage') ? 'class="active"' : ''}}>
-                        <a href="{{ path('kelp_settig_type_storage') }}">TypeStorage</a>
+                {#{% if is_granted("ROLE_ADMIN") %}#}
+                    <li {{ currentPath == path('kelp_setting_type_storage') ? 'class="active"' : ''}}>
+                        <a href="{{ path('kelp_setting_type_storage') }}">TypeStorage</a>
                     </li>
-                {% endif %}
+                    <li {{ currentPath == path('kelp_setting_user') ? 'class="active"' : ''}}>
+                        <a href="{{ path('kelp_setting_user') }}">User</a>
+                    </li>
+                {#{% endif %}#}
             </ul>
             <ul class="nav navbar-nav pull-right">
                 <li class="dropdown">

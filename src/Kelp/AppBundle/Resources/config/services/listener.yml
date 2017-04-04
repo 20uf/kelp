@@ -1,0 +1,9 @@
+services:
+    kelp.user.search_form.listener:
+        class: Kelp\AppBundle\EventListener\SearchUserFormListener
+        arguments:
+          - "@kelp.user.search_dto.factory"
+          - "@form.factory"
+          - "@=service('kelp.user.mapper_manager').getDefaultMapper()"
+          - "@=service('request_stack').getCurrentRequest()"
+        tags: [{name: "kernel.event_listener", event: "kelp.app.setting_user.processor.process"}]

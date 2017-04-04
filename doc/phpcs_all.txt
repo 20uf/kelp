@@ -1,5 +1,97 @@
 
-FILE: ...ace/kelpdp/src/Kelp/AppBundle/Controller/DashboardController.php
+FILE: .../src/Kelp/AppBundle/Tests/Processor/SettingUserProcessorTest.php
+----------------------------------------------------------------------
+FOUND 6 ERRORS AND 1 WARNING AFFECTING 4 LINES
+----------------------------------------------------------------------
+  2 | ERROR   | Missing file doc comment
+ 11 | ERROR   | Missing @category tag in class comment
+ 11 | ERROR   | Missing @author tag in class comment
+ 11 | ERROR   | Missing @license tag in class comment
+ 11 | ERROR   | Missing @link tag in class comment
+ 14 | ERROR   | Missing function doc comment
+ 20 | WARNING | Line exceeds 85 characters; contains 105 characters
+----------------------------------------------------------------------
+
+
+FILE: ...lp/AppBundle/Tests/Processor/SettingTypeStorageProcessorTest.php
+----------------------------------------------------------------------
+FOUND 6 ERRORS AND 1 WARNING AFFECTING 4 LINES
+----------------------------------------------------------------------
+  2 | ERROR   | Missing file doc comment
+ 11 | ERROR   | Missing @category tag in class comment
+ 11 | ERROR   | Missing @author tag in class comment
+ 11 | ERROR   | Missing @license tag in class comment
+ 11 | ERROR   | Missing @link tag in class comment
+ 14 | ERROR   | Missing function doc comment
+ 20 | WARNING | Line exceeds 85 characters; contains 105 characters
+----------------------------------------------------------------------
+
+
+FILE: ...rkSpace/kelp/src/Kelp/AppBundle/Processor/ProcessorInterface.php
+----------------------------------------------------------------------
+FOUND 6 ERRORS AFFECTING 3 LINES
+----------------------------------------------------------------------
+  2 | ERROR | Missing file doc comment
+  8 | ERROR | Missing @category tag in class comment
+  8 | ERROR | Missing @author tag in class comment
+  8 | ERROR | Missing @license tag in class comment
+  8 | ERROR | Missing @link tag in class comment
+ 11 | ERROR | Missing function doc comment
+----------------------------------------------------------------------
+
+
+FILE: ...elp/src/Kelp/AppBundle/Processor/SettingTypeStorageProcessor.php
+----------------------------------------------------------------------
+FOUND 9 ERRORS AFFECTING 6 LINES
+----------------------------------------------------------------------
+  2 | ERROR | Missing file doc comment
+ 10 | ERROR | Missing @category tag in class comment
+ 10 | ERROR | Missing @author tag in class comment
+ 10 | ERROR | Missing @license tag in class comment
+ 10 | ERROR | Missing @link tag in class comment
+ 13 | ERROR | Missing short description in doc comment
+ 16 | ERROR | Private member variable "eventDispatcher" must be
+    |       | prefixed with an underscore
+ 21 | ERROR | Missing parameter comment
+ 28 | ERROR | Missing short description in doc comment
+----------------------------------------------------------------------
+
+
+FILE: ...Space/kelp/src/Kelp/AppBundle/Processor/SettingUserProcessor.php
+----------------------------------------------------------------------
+FOUND 9 ERRORS AND 1 WARNING AFFECTING 7 LINES
+----------------------------------------------------------------------
+  2 | ERROR   | Missing file doc comment
+ 11 | ERROR   | Missing @category tag in class comment
+ 11 | ERROR   | Missing @author tag in class comment
+ 11 | ERROR   | Missing @license tag in class comment
+ 11 | ERROR   | Missing @link tag in class comment
+ 14 | ERROR   | Missing short description in doc comment
+ 17 | ERROR   | Private member variable "eventDispatcher" must be
+    |         | prefixed with an underscore
+ 22 | ERROR   | Missing parameter comment
+ 29 | ERROR   | Missing short description in doc comment
+ 35 | WARNING | Line exceeds 85 characters; contains 92 characters
+----------------------------------------------------------------------
+
+
+FILE: ...me/neo/workSpace/kelp/src/Kelp/AppBundle/Form/SearchUserType.php
+----------------------------------------------------------------------
+FOUND 9 ERRORS AFFECTING 9 LINES
+----------------------------------------------------------------------
+  2 | ERROR | Missing file doc comment
+  9 | ERROR | Missing class doc comment
+ 11 | ERROR | Missing short description in doc comment
+ 12 | ERROR | Missing parameter comment
+ 13 | ERROR | Missing parameter comment
+ 14 | ERROR | Missing @return tag in function comment
+ 25 | ERROR | Missing short description in doc comment
+ 26 | ERROR | Missing parameter comment
+ 27 | ERROR | Missing @return tag in function comment
+----------------------------------------------------------------------
+
+
+FILE: ...Space/kelp/src/Kelp/AppBundle/Controller/DashboardController.php
 ----------------------------------------------------------------------
 FOUND 3 ERRORS AFFECTING 3 LINES
 ----------------------------------------------------------------------
@@ -9,7 +101,7 @@ FOUND 3 ERRORS AFFECTING 3 LINES
 ----------------------------------------------------------------------
 
 
-FILE: ...Space/kelpdp/src/Kelp/AppBundle/Controller/SettingController.php
+FILE: ...rkSpace/kelp/src/Kelp/AppBundle/Controller/SettingController.php
 ----------------------------------------------------------------------
 FOUND 7 ERRORS AFFECTING 4 LINES
 ----------------------------------------------------------------------
@@ -23,51 +115,7 @@ FOUND 7 ERRORS AFFECTING 4 LINES
 ----------------------------------------------------------------------
 
 
-FILE: .../kelpdp/src/Kelp/AppBundle/DependencyInjection/Configuration.php
-----------------------------------------------------------------------
-FOUND 7 ERRORS AND 2 WARNINGS AFFECTING 5 LINES
-----------------------------------------------------------------------
-  2 | ERROR   | Missing file doc comment
-  9 | WARNING | Line exceeds 85 characters; contains 88 characters
- 11 | WARNING | Line exceeds 85 characters; contains 95 characters
- 12 | ERROR   | Missing @category tag in class comment
- 12 | ERROR   | Missing @package tag in class comment
- 12 | ERROR   | Missing @author tag in class comment
- 12 | ERROR   | Missing @license tag in class comment
- 12 | ERROR   | Missing @link tag in class comment
- 17 | ERROR   | Missing @return tag in function comment
-----------------------------------------------------------------------
-
-
-FILE: ...lpdp/src/Kelp/AppBundle/DependencyInjection/KelpAppExtension.php
-----------------------------------------------------------------------
-FOUND 8 ERRORS AND 2 WARNINGS AFFECTING 6 LINES
-----------------------------------------------------------------------
-  2 | ERROR   | Missing file doc comment
- 14 | ERROR   | Missing @category tag in class comment
- 14 | ERROR   | Missing @package tag in class comment
- 14 | ERROR   | Missing @author tag in class comment
- 14 | ERROR   | Missing @license tag in class comment
- 17 | ERROR   | Doc comment for parameter "$configs" missing
- 17 | ERROR   | Doc comment for parameter "$container" missing
- 19 | ERROR   | Missing @return tag in function comment
- 25 | WARNING | Line exceeds 85 characters; contains 97 characters
- 27 | WARNING | Line exceeds 85 characters; contains 105 characters
-----------------------------------------------------------------------
-
-
-FILE: .../groot/workSpace/kelpdp/src/Kelp/AppBundle/DTO/SearchUserDTO.php
-----------------------------------------------------------------------
-FOUND 4 ERRORS AFFECTING 4 LINES
-----------------------------------------------------------------------
-  2 | ERROR | Missing file doc comment
-  6 | ERROR | Missing class doc comment
-  8 | ERROR | Missing short description in doc comment
- 13 | ERROR | Doc comment is empty
-----------------------------------------------------------------------
-
-
-FILE: ...ers/groot/workSpace/kelpdp/src/Kelp/AppBundle/DTO/StorageDTO.php
+FILE: /home/neo/workSpace/kelp/src/Kelp/AppBundle/Entity/Storage.php
 ----------------------------------------------------------------------
 FOUND 5 ERRORS AFFECTING 2 LINES
 ----------------------------------------------------------------------
@@ -79,55 +127,7 @@ FOUND 5 ERRORS AFFECTING 2 LINES
 ----------------------------------------------------------------------
 
 
-FILE: ...ers/groot/workSpace/kelpdp/src/Kelp/AppBundle/Entity/Product.php
-----------------------------------------------------------------------
-FOUND 5 ERRORS AFFECTING 2 LINES
-----------------------------------------------------------------------
- 2 | ERROR | Missing file doc comment
- 8 | ERROR | Missing @category tag in class comment
- 8 | ERROR | Missing @author tag in class comment
- 8 | ERROR | Missing @license tag in class comment
- 8 | ERROR | Missing @link tag in class comment
-----------------------------------------------------------------------
-
-
-FILE: ...p/src/Kelp/AppBundle/Entity/Repository/TypeStorageRepository.php
-----------------------------------------------------------------------
-FOUND 5 ERRORS AFFECTING 2 LINES
-----------------------------------------------------------------------
- 2 | ERROR | Missing file doc comment
- 8 | ERROR | Missing @category tag in class comment
- 8 | ERROR | Missing @author tag in class comment
- 8 | ERROR | Missing @license tag in class comment
- 8 | ERROR | Missing @link tag in class comment
-----------------------------------------------------------------------
-
-
-FILE: ...ers/groot/workSpace/kelpdp/src/Kelp/AppBundle/Entity/Storage.php
-----------------------------------------------------------------------
-FOUND 5 ERRORS AFFECTING 2 LINES
-----------------------------------------------------------------------
- 2 | ERROR | Missing file doc comment
- 8 | ERROR | Missing @category tag in class comment
- 8 | ERROR | Missing @author tag in class comment
- 8 | ERROR | Missing @license tag in class comment
- 8 | ERROR | Missing @link tag in class comment
-----------------------------------------------------------------------
-
-
-FILE: ...groot/workSpace/kelpdp/src/Kelp/AppBundle/Entity/TypeProduct.php
-----------------------------------------------------------------------
-FOUND 5 ERRORS AFFECTING 2 LINES
-----------------------------------------------------------------------
- 2 | ERROR | Missing file doc comment
- 8 | ERROR | Missing @category tag in class comment
- 8 | ERROR | Missing @author tag in class comment
- 8 | ERROR | Missing @license tag in class comment
- 8 | ERROR | Missing @link tag in class comment
-----------------------------------------------------------------------
-
-
-FILE: ...groot/workSpace/kelpdp/src/Kelp/AppBundle/Entity/TypeStorage.php
+FILE: ...ome/neo/workSpace/kelp/src/Kelp/AppBundle/Entity/TypeStorage.php
 ----------------------------------------------------------------------
 FOUND 27 ERRORS AND 2 WARNINGS AFFECTING 21 LINES
 ----------------------------------------------------------------------
@@ -166,39 +166,72 @@ FOUND 27 ERRORS AND 2 WARNINGS AFFECTING 21 LINES
 ----------------------------------------------------------------------
 
 
-FILE: /Users/groot/workSpace/kelpdp/src/Kelp/AppBundle/Entity/User.php
+FILE: /home/neo/workSpace/kelp/src/Kelp/AppBundle/Entity/Product.php
+----------------------------------------------------------------------
+FOUND 5 ERRORS AFFECTING 2 LINES
+----------------------------------------------------------------------
+ 2 | ERROR | Missing file doc comment
+ 8 | ERROR | Missing @category tag in class comment
+ 8 | ERROR | Missing @author tag in class comment
+ 8 | ERROR | Missing @license tag in class comment
+ 8 | ERROR | Missing @link tag in class comment
+----------------------------------------------------------------------
+
+
+FILE: ...ace/kelp/src/Kelp/AppBundle/Entity/Repository/UserRepository.php
+----------------------------------------------------------------------
+FOUND 6 ERRORS AFFECTING 3 LINES
+----------------------------------------------------------------------
+  2 | ERROR | Missing file doc comment
+ 10 | ERROR | Missing @category tag in class comment
+ 10 | ERROR | Missing @author tag in class comment
+ 10 | ERROR | Missing @license tag in class comment
+ 10 | ERROR | Missing @link tag in class comment
+ 13 | ERROR | Missing function doc comment
+----------------------------------------------------------------------
+
+
+FILE: ...p/src/Kelp/AppBundle/Entity/Repository/TypeStorageRepository.php
+----------------------------------------------------------------------
+FOUND 5 ERRORS AFFECTING 2 LINES
+----------------------------------------------------------------------
+ 2 | ERROR | Missing file doc comment
+ 8 | ERROR | Missing @category tag in class comment
+ 8 | ERROR | Missing @author tag in class comment
+ 8 | ERROR | Missing @license tag in class comment
+ 8 | ERROR | Missing @link tag in class comment
+----------------------------------------------------------------------
+
+
+FILE: /home/neo/workSpace/kelp/src/Kelp/AppBundle/Entity/User.php
 ----------------------------------------------------------------------
 FOUND 9 ERRORS AFFECTING 5 LINES
 ----------------------------------------------------------------------
   2 | ERROR | You must use "/**" style comments for a file comment
   9 | ERROR | Missing short description in doc comment
- 12 | ERROR | Missing @category tag in class comment
- 12 | ERROR | Missing @package tag in class comment
- 12 | ERROR | Missing @author tag in class comment
- 12 | ERROR | Missing @license tag in class comment
- 12 | ERROR | Missing @link tag in class comment
- 15 | ERROR | Missing short description in doc comment
- 22 | ERROR | Missing function doc comment
+ 13 | ERROR | Missing @category tag in class comment
+ 13 | ERROR | Missing @package tag in class comment
+ 13 | ERROR | Missing @author tag in class comment
+ 13 | ERROR | Missing @license tag in class comment
+ 13 | ERROR | Missing @link tag in class comment
+ 16 | ERROR | Missing short description in doc comment
+ 23 | ERROR | Missing function doc comment
 ----------------------------------------------------------------------
 
 
-FILE: ...root/workSpace/kelpdp/src/Kelp/AppBundle/Form/SearchUserType.php
+FILE: ...ome/neo/workSpace/kelp/src/Kelp/AppBundle/Entity/TypeProduct.php
 ----------------------------------------------------------------------
-FOUND 9 ERRORS AFFECTING 9 LINES
+FOUND 5 ERRORS AFFECTING 2 LINES
 ----------------------------------------------------------------------
-  2 | ERROR | Missing file doc comment
-  9 | ERROR | Missing class doc comment
- 11 | ERROR | Missing short description in doc comment
- 12 | ERROR | Missing parameter comment
- 13 | ERROR | Missing parameter comment
- 14 | ERROR | Missing @return tag in function comment
- 25 | ERROR | Missing short description in doc comment
- 26 | ERROR | Missing parameter comment
- 27 | ERROR | Missing @return tag in function comment
+ 2 | ERROR | Missing file doc comment
+ 8 | ERROR | Missing @category tag in class comment
+ 8 | ERROR | Missing @author tag in class comment
+ 8 | ERROR | Missing @license tag in class comment
+ 8 | ERROR | Missing @link tag in class comment
 ----------------------------------------------------------------------
 
 
-FILE: ...sers/groot/workSpace/kelpdp/src/Kelp/AppBundle/KelpAppBundle.php
+FILE: /home/neo/workSpace/kelp/src/Kelp/AppBundle/KelpAppBundle.php
 ----------------------------------------------------------------------
 FOUND 3 ERRORS AFFECTING 3 LINES
 ----------------------------------------------------------------------
@@ -208,78 +241,195 @@ FOUND 3 ERRORS AFFECTING 3 LINES
 ----------------------------------------------------------------------
 
 
-FILE: ...Space/kelpdp/src/Kelp/AppBundle/Processor/ProcessorInterface.php
+FILE: ...o/workSpace/kelp/src/Kelp/AppBundle/Factory/FactoryInterface.php
 ----------------------------------------------------------------------
-FOUND 6 ERRORS AFFECTING 3 LINES
+FOUND 3 ERRORS AFFECTING 3 LINES
+----------------------------------------------------------------------
+ 2 | ERROR | Missing file doc comment
+ 4 | ERROR | Missing class doc comment
+ 6 | ERROR | Missing function doc comment
+----------------------------------------------------------------------
+
+
+FILE: ...rkSpace/kelp/src/Kelp/AppBundle/Factory/SearchUserDTOFactory.php
+----------------------------------------------------------------------
+FOUND 3 ERRORS AFFECTING 3 LINES
+----------------------------------------------------------------------
+ 2 | ERROR | Missing file doc comment
+ 6 | ERROR | Missing class doc comment
+ 8 | ERROR | Missing function doc comment
+----------------------------------------------------------------------
+
+
+FILE: ...me/neo/workSpace/kelp/src/Kelp/AppBundle/Factory/UserFactory.php
+----------------------------------------------------------------------
+FOUND 3 ERRORS AFFECTING 3 LINES
+----------------------------------------------------------------------
+ 2 | ERROR | Missing file doc comment
+ 6 | ERROR | Missing class doc comment
+ 8 | ERROR | Missing function doc comment
+----------------------------------------------------------------------
+
+
+FILE: .../workSpace/kelp/src/Kelp/AppBundle/Mapper/UserDoctrineMapper.php
+----------------------------------------------------------------------
+FOUND 15 ERRORS AFFECTING 14 LINES
 ----------------------------------------------------------------------
   2 | ERROR | Missing file doc comment
-  8 | ERROR | Missing @category tag in class comment
-  8 | ERROR | Missing @author tag in class comment
-  8 | ERROR | Missing @license tag in class comment
-  8 | ERROR | Missing @link tag in class comment
- 11 | ERROR | Missing function doc comment
+  8 | ERROR | Missing class doc comment
+ 10 | ERROR | Missing short description in doc comment
+ 13 | ERROR | Private member variable "doctrine" must be prefixed
+    |       | with an underscore
+ 15 | ERROR | Missing short description in doc comment
+ 18 | ERROR | Private member variable "userFactory" must be prefixed
+    |       | with an underscore
+ 23 | ERROR | Missing parameter comment
+ 24 | ERROR | Missing parameter comment
+ 32 | ERROR | Missing short description in doc comment
+ 35 | ERROR | Private method name "UserDoctrineMapper::getManager"
+    |       | must be prefixed with an underscore
+ 40 | ERROR | Missing short description in doc comment
+ 43 | ERROR | Private method name "UserDoctrineMapper::getRepository"
+    |       | must be prefixed with an underscore
+ 48 | ERROR | Missing short description in doc comment
+ 48 | ERROR | Doc comment for parameter "$limit" missing
+ 57 | ERROR | Missing function doc comment
 ----------------------------------------------------------------------
 
 
-FILE: ...pdp/src/Kelp/AppBundle/Processor/SettingTypeStorageProcessor.php
+FILE: ...workSpace/kelp/src/Kelp/AppBundle/Mapper/UserMapperInterface.php
 ----------------------------------------------------------------------
-FOUND 9 ERRORS AFFECTING 6 LINES
+FOUND 4 ERRORS AFFECTING 4 LINES
 ----------------------------------------------------------------------
-  2 | ERROR | Missing file doc comment
- 10 | ERROR | Missing @category tag in class comment
- 10 | ERROR | Missing @author tag in class comment
- 10 | ERROR | Missing @license tag in class comment
- 10 | ERROR | Missing @link tag in class comment
- 13 | ERROR | Missing short description in doc comment
- 16 | ERROR | Private member variable "eventDispatcher" must be
-    |       | prefixed with an underscore
- 21 | ERROR | Missing parameter comment
- 28 | ERROR | Missing short description in doc comment
+ 2 | ERROR | Missing file doc comment
+ 4 | ERROR | Missing class doc comment
+ 6 | ERROR | Missing function doc comment
+ 8 | ERROR | Missing function doc comment
 ----------------------------------------------------------------------
 
 
-FILE: ...ace/kelpdp/src/Kelp/AppBundle/Processor/SettingUserProcessor.php
+FILE: ...ace/kelp/src/Kelp/AppBundle/Mapper/Manager/UserMapperManager.php
 ----------------------------------------------------------------------
-FOUND 9 ERRORS AFFECTING 6 LINES
-----------------------------------------------------------------------
-  2 | ERROR | Missing file doc comment
- 10 | ERROR | Missing @category tag in class comment
- 10 | ERROR | Missing @author tag in class comment
- 10 | ERROR | Missing @license tag in class comment
- 10 | ERROR | Missing @link tag in class comment
- 13 | ERROR | Missing short description in doc comment
- 16 | ERROR | Private member variable "eventDispatcher" must be
-    |       | prefixed with an underscore
- 21 | ERROR | Missing parameter comment
- 28 | ERROR | Missing short description in doc comment
-----------------------------------------------------------------------
-
-
-FILE: ...lp/AppBundle/Tests/Processor/SettingTypeStorageProcessorTest.php
-----------------------------------------------------------------------
-FOUND 6 ERRORS AND 1 WARNING AFFECTING 4 LINES
+FOUND 9 ERRORS AND 1 WARNING AFFECTING 10 LINES
 ----------------------------------------------------------------------
   2 | ERROR   | Missing file doc comment
- 11 | ERROR   | Missing @category tag in class comment
- 11 | ERROR   | Missing @author tag in class comment
- 11 | ERROR   | Missing @license tag in class comment
- 11 | ERROR   | Missing @link tag in class comment
- 14 | ERROR   | Missing function doc comment
- 20 | WARNING | Line exceeds 85 characters; contains 105 characters
+  6 | ERROR   | Missing class doc comment
+  8 | ERROR   | Private member variable "mappers" must be prefixed
+    |         | with an underscore
+ 10 | ERROR   | Private member variable "defaultType" must be
+    |         | prefixed with an underscore
+ 12 | ERROR   | Missing function doc comment
+ 17 | ERROR   | Missing function doc comment
+ 22 | ERROR   | Missing function doc comment
+ 25 | WARNING | Line exceeds 85 characters; contains 86 characters
+ 31 | ERROR   | Missing short description in doc comment
+ 39 | ERROR   | Missing function doc comment
 ----------------------------------------------------------------------
 
 
-FILE: .../src/Kelp/AppBundle/Tests/Processor/SettingUserProcessorTest.php
+FILE: /home/neo/workSpace/kelp/src/Kelp/AppBundle/DTO/StorageDTO.php
 ----------------------------------------------------------------------
-FOUND 6 ERRORS AND 1 WARNING AFFECTING 4 LINES
+FOUND 5 ERRORS AFFECTING 2 LINES
+----------------------------------------------------------------------
+ 2 | ERROR | Missing file doc comment
+ 8 | ERROR | Missing @category tag in class comment
+ 8 | ERROR | Missing @author tag in class comment
+ 8 | ERROR | Missing @license tag in class comment
+ 8 | ERROR | Missing @link tag in class comment
+----------------------------------------------------------------------
+
+
+FILE: ...home/neo/workSpace/kelp/src/Kelp/AppBundle/DTO/SearchUserDTO.php
+----------------------------------------------------------------------
+FOUND 4 ERRORS AFFECTING 4 LINES
+----------------------------------------------------------------------
+  2 | ERROR | Missing file doc comment
+  6 | ERROR | Missing class doc comment
+  8 | ERROR | Missing short description in doc comment
+ 13 | ERROR | Doc comment is empty
+----------------------------------------------------------------------
+
+
+FILE: ...Bundle/DependencyInjection/Compiler/UserMapperMangerCompiler.php
+----------------------------------------------------------------------
+FOUND 3 ERRORS AFFECTING 3 LINES
+----------------------------------------------------------------------
+  2 | ERROR | Missing file doc comment
+  8 | ERROR | Missing class doc comment
+ 12 | ERROR | Missing function doc comment
+----------------------------------------------------------------------
+
+
+FILE: ...kelp/src/Kelp/AppBundle/DependencyInjection/KelpAppExtension.php
+----------------------------------------------------------------------
+FOUND 8 ERRORS AND 2 WARNINGS AFFECTING 6 LINES
 ----------------------------------------------------------------------
   2 | ERROR   | Missing file doc comment
- 11 | ERROR   | Missing @category tag in class comment
- 11 | ERROR   | Missing @author tag in class comment
- 11 | ERROR   | Missing @license tag in class comment
- 11 | ERROR   | Missing @link tag in class comment
- 14 | ERROR   | Missing function doc comment
- 20 | WARNING | Line exceeds 85 characters; contains 105 characters
+ 14 | ERROR   | Missing @category tag in class comment
+ 14 | ERROR   | Missing @package tag in class comment
+ 14 | ERROR   | Missing @author tag in class comment
+ 14 | ERROR   | Missing @license tag in class comment
+ 17 | ERROR   | Doc comment for parameter "$configs" missing
+ 17 | ERROR   | Doc comment for parameter "$container" missing
+ 19 | ERROR   | Missing @return tag in function comment
+ 25 | WARNING | Line exceeds 85 characters; contains 97 characters
+ 27 | WARNING | Line exceeds 85 characters; contains 105 characters
 ----------------------------------------------------------------------
 
-Time: 43ms; Memory: 4Mb
+
+FILE: ...ce/kelp/src/Kelp/AppBundle/DependencyInjection/Configuration.php
+----------------------------------------------------------------------
+FOUND 7 ERRORS AND 2 WARNINGS AFFECTING 5 LINES
+----------------------------------------------------------------------
+  2 | ERROR   | Missing file doc comment
+  9 | WARNING | Line exceeds 85 characters; contains 88 characters
+ 11 | WARNING | Line exceeds 85 characters; contains 95 characters
+ 12 | ERROR   | Missing @category tag in class comment
+ 12 | ERROR   | Missing @package tag in class comment
+ 12 | ERROR   | Missing @author tag in class comment
+ 12 | ERROR   | Missing @license tag in class comment
+ 12 | ERROR   | Missing @link tag in class comment
+ 17 | ERROR   | Missing @return tag in function comment
+----------------------------------------------------------------------
+
+
+FILE: ...kelp/src/Kelp/AppBundle/EventListener/SearchUserFormListener.php
+----------------------------------------------------------------------
+FOUND 17 ERRORS AND 2 WARNINGS AFFECTING 19 LINES
+----------------------------------------------------------------------
+  2 | ERROR   | Missing file doc comment
+ 11 | ERROR   | Missing class doc comment
+ 13 | ERROR   | Missing short description in doc comment
+ 16 | ERROR   | Private member variable "dtoFactory" must be prefixed
+    |         | with an underscore
+ 17 | ERROR   | Missing short description in doc comment
+ 20 | ERROR   | Private member variable "formFactory" must be
+    |         | prefixed with an underscore
+ 21 | ERROR   | Missing short description in doc comment
+ 24 | ERROR   | Private member variable "userMapper" must be prefixed
+    |         | with an underscore
+ 25 | ERROR   | Missing short description in doc comment
+ 28 | ERROR   | Private member variable "request" must be prefixed
+    |         | with an underscore
+ 33 | ERROR   | Missing parameter comment
+ 34 | ERROR   | Missing parameter comment
+ 35 | ERROR   | Missing parameter comment
+ 36 | ERROR   | Missing parameter comment
+ 51 | ERROR   | Missing short description in doc comment
+ 52 | ERROR   | Missing parameter comment
+ 53 | ERROR   | Missing @return tag in function comment
+ 58 | WARNING | Line exceeds 85 characters; contains 100 characters
+ 64 | WARNING | Line exceeds 85 characters; contains 108 characters
+----------------------------------------------------------------------
+
+
+FILE: ...pace/kelp/src/Kelp/AppBundle/EventListener/ListenerInterface.php
+----------------------------------------------------------------------
+FOUND 3 ERRORS AFFECTING 3 LINES
+----------------------------------------------------------------------
+ 2 | ERROR | Missing file doc comment
+ 6 | ERROR | Missing class doc comment
+ 8 | ERROR | Missing function doc comment
+----------------------------------------------------------------------
+
+Time: 76ms; Memory: 4Mb
