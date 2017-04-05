@@ -2,7 +2,7 @@
 
 namespace Kelp\AppBundle;
 
-use Kelp\AppBundle\DependencyInjection\Compiler\UserMapperManagerCompiler;
+use Kelp\AppBundle\DependencyInjection\Compiler\MapperManagerCompiler;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -13,7 +13,7 @@ class KelpAppBundle extends Bundle
         parent::build($container);
 
         $container->addCompilerPass(
-            new UserMapperManagerCompiler()
+            new MapperManagerCompiler()
         );
     }
     public function getParent()

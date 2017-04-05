@@ -1,4 +1,4 @@
 services:
-    kelp.user.mapper_manager:
-        class: Kelp\AppBundle\Mapper\Manager\UserMapperManager
+    kelp.mapper_manager:
+        class: Kelp\AppBundle\Mapper\Manager\MapperManager
         arguments: ["%kelp_app.storage.mapper_config%"]

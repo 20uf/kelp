@@ -4,7 +4,7 @@ services:
             arguments:
               - "@kelp.user.search_dto.factory"
               - "@form.factory"
-              - "@=service('kelp.user.mapper_manager').getDefaultMapper() "
+              - "@=service('kelp.mapper_manager').getDefaultMapper() "
               - "@=service('request_stack').getCurrentRequest()"
             tags: [{name: "kernel.event_listener", event: "kelp.app.setting_user.processor.process", method: onProcess}]
 

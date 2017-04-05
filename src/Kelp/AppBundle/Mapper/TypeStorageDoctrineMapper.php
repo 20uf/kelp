@@ -1,9 +1,15 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: groot
+ * Date: 05/04/2017
+ * Time: 18:04
+ */
+
 namespace Kelp\AppBundle\Mapper;
 
-use Kelp\AppBundle\Factory\UserFactory;
 
-class UserDoctrineMapper extends AbstractDoctrineMapperInterface
+class TypeStorageDoctrineMapper extends AbstractDoctrineMapperInterface
 {
     /**
      * @param string $name

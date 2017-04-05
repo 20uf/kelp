@@ -5,9 +5,9 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
-class UserMapperManagerCompiler implements CompilerPassInterface
+class MapperManagerCompiler implements CompilerPassInterface
 {
-    const MANAGER_ID = 'kelp.user.mapper_manager';
+    const MANAGER_ID = 'kelp.mapper_manager';
 
     public function process(ContainerBuilder $container)
     {
@@ -17,7 +17,7 @@ class UserMapperManagerCompiler implements CompilerPassInterface
 
         $managerDefinition = $container->getDefinition(self::MANAGER_ID);
 
-        $mappers = $container->findTaggedServiceIds('kelp_app.user_mapper');
+        $mappers = $container->findTaggedServiceIds('kelp_app.mapper');
 
         foreach ($mappers as $mapperId => $mapperTags) {
             foreach ($mapperTags as $tag) {

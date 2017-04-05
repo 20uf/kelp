@@ -3,7 +3,7 @@ namespace Kelp\AppBundle\Processor;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-class AbstractProcessor implements ProcessorInterface
+abstract class AbstractProcessor implements ProcessorInterface
 {
     /**
      * @var EventDispatcherInterface
@@ -19,9 +19,5 @@ class AbstractProcessor implements ProcessorInterface
     {
         $this->eventDispatcher = $eventDispatcher;
     }
-
-    public function process()
-    {
-        return [];
-    }
+    abstract public function process();
 }

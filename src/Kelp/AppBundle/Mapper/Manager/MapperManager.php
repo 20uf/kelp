@@ -1,9 +1,9 @@
 <?php
 namespace Kelp\AppBundle\Mapper\Manager;
 
-use Kelp\AppBundle\Mapper\UserMapperInterface;
+use Kelp\AppBundle\Mapper\AbstractDoctrineMapperInterface;
 
-class UserMapperManager
+class MapperManager
 {
     private $mappers = [];
 
@@ -14,7 +14,7 @@ class UserMapperManager
         $this->defaultType = $defaultType;
     }
 
-    public function addMapper($type, UserMapperInterface $mapper)
+    public function addMapper($type, AbstractDoctrineMapperInterface $mapper)
     {
         $this->mappers[$type] = $mapper;
     }
@@ -38,8 +38,6 @@ class UserMapperManager
 
     public function getDefaultMapper()
     {
-        //        dump($this->getDefaultType());
-
         return $this->getMapper($this->getDefaultType());
     }
 }
