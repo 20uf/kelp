@@ -1,10 +1,5 @@
 phpcpd 3.0.0 by Sebastian Bergmann.
 
-Found 1 clones with 66 duplicated lines in 2 files:
+0.00% duplicated lines out of 857 total lines of code.
 
-  - /home/neo/workSpace/kelp/src/Kelp/AppBundle/EventListener/SearchUserFormListener.php:2-68
-    /home/neo/workSpace/kelp/src/Kelp/AppBundle/EventListener/SearchTypeStorageFormListener.php:2-68
-
-7.61% duplicated lines out of 867 total lines of code.
-
-Time: 45 ms, Memory: 2.00MB
+Time: 27 ms, Memory: 2.00MB

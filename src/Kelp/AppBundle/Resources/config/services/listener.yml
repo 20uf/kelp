@@ -1,9 +1,18 @@
 services:
     kelp.user.search_form.listener:
-        class: Kelp\AppBundle\EventListener\SearchUserFormListener
-        arguments:
-          - "@kelp.user.search_dto.factory"
-          - "@form.factory"
-          - "@=service('kelp.user.mapper_manager').getDefaultMapper()"
-          - "@=service('request_stack').getCurrentRequest()"
-        tags: [{name: "kernel.event_listener", event: "kelp.app.setting_user.processor.process", method: onProcess}]
+            class: Kelp\AppBundle\EventListener\SearchUserFormListener
+            arguments:
+              - "@kelp.user.search_dto.factory"
+              - "@form.factory"
+              - "@=service('kelp.user.mapper_manager').getDefaultMapper() "
+              - "@=service('request_stack').getCurrentRequest()"
+            tags: [{name: "kernel.event_listener", event: "kelp.app.setting_user.processor.process", method: onProcess}]
+
+#    kelp.type_storage.search_form.listener:
+#            class: Kelp\AppBundle\EventListener\SearchTypeStorageFormListener
+#            arguments:
+#              - "@kelp.type_storage.search_dto.factory"
+#              - "@form.factory"
+#              - "@=service('kelp.user.mapper_manager').getDefaultMapper() "
+#              - "@=service('request_stack').getCurrentRequest()"
+#            tags: [{name: "kernel.event_listener",  event: "kelp.app.setting_type_storage.processor.process", method: onProcess}]

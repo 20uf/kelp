@@ -5,3 +5,7 @@ services:
     kelp.user.search_dto.factory:
         class: Kelp\AppBundle\Factory\SearchUserDTOFactory
         public: false
+
+    kelp.type_storage.search_dto.factory:
+        class: Kelp\AppBundle\Factory\SearchTypeStorageDTOFactory
+        public: false

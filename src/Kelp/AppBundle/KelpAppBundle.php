@@ -3,7 +3,6 @@
 namespace Kelp\AppBundle;
 
 use Kelp\AppBundle\DependencyInjection\Compiler\UserMapperManagerCompiler;
-use Kelp\AppBundle\Mapper\Manager\UserMapperManager;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

@@ -1,35 +1,23 @@
 <?php
 namespace Kelp\AppBundle\Processor;
 
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\GenericEvent;
 
 /**
  * Class SettingTypeStorageProcessor
  *
  * @package Kelp\AppBundle\Processor
  */
-class SettingTypeStorageProcessor implements ProcessorInterface
+class SettingTypeStorageProcessor extends AbstractProcessor
 {
-    /**
-     * @var EventDispatcherInterface
-     */
-    private $eventDispatcher;
-
-    /**
-     * SettingTypeStorageProcessor constructor.
-     *
-     * @param EventDispatcherInterface $eventDispatcher
-     */
-    public function __construct(EventDispatcherInterface $eventDispatcher)
-    {
-        $this->eventDispatcher = $eventDispatcher;
-    }
-
     /**
      * @return array
      */
     public function process()
     {
-        return ['processor' => 'SettingTypeStorage'];
+        $event = new GenericEvent();
+        //        $this->eventDispatcher->dispatch('kelp.app.setting_type_storage.processor.process', $event);
+
+        return $event->getArguments();
     }
 }
