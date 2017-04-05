@@ -1,13 +1,13 @@
 <?php
 namespace Kelp\AppBundle\Factory;
 
-use Kelp\AppBundle\Form\SearchUserType;
+use Kelp\AppBundle\DTO\SearchUserDTO;
 
 class SearchUserDTOFactory implements FactoryInterface
 {
     public function newInstance()
     {
-        $dto = new SearchUserType();
+        $dto = new SearchUserDTO();
         return $dto;
     }
 }

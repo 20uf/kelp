@@ -14,19 +14,26 @@ class UserRepository extends EntityRepository
     {
         $builder = $this->getEntityManager()->createQueryBuilder();
 
+        $class = $this->getClassName();
+
+        if (strstr($this->getClassName(), '\\')) {
+            $class = explode("\\", $class);
+            $class = end($class);
+        }
+
         $builder
-            ->select('*')
+            ->select('user.username')
             ->from($this->getClassName(), 'user');
 
         if ($name !== null) {
             $builder
-                ->where('user.login like :name or user.email like :name')
+                ->where('user.username like :name or user.email like :name')
                 ->setParameter('name', '%' . $name . '%');
         }
 
         if ($role !== null) {
             $builder
-                ->where('user.role :role')
+                ->where('user.roles  :role')
                 ->setParameter('role', '%' . $role . '%');
         }
         return $builder->getQuery()->getResult();

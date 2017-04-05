@@ -5,7 +5,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
-class UserMapperMangerCompiler implements CompilerPassInterface
+class UserMapperManagerCompiler implements CompilerPassInterface
 {
     const MANAGER_ID = 'kelp.user.mapper_manager';
 

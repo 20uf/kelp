@@ -2,5 +2,5 @@ services:
     kelp.user.doctrine.mapper:
         class: Kelp\AppBundle\Mapper\UserDoctrineMapper
         public: false
-        arguments: ["@doctrine", "Kelp.user.factory"]
+        arguments: ["@doctrine"]
         tags: [{name: "kelp_app.user_mapper", type: "doctrine"}]

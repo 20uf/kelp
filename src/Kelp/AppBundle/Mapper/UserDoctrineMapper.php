@@ -13,20 +13,13 @@ class UserDoctrineMapper implements UserMapperInterface
     private $doctrine;
 
     /**
-     * @var UserFactory
-     */
-    private $userFactory;
-
-    /**
      * UserDoctrineMapper constructor.
      *
      * @param ManagerRegistry $doctrine
-     * @param UserFactory     $userFactory
      */
-    public function __construct(ManagerRegistry $doctrine, UserFactory $userFactory)
+    public function __construct(ManagerRegistry $doctrine)
     {
         $this->doctrine = $doctrine;
-        $this->userFactory = $userFactory;
     }
 
     /**
@@ -42,15 +35,13 @@ class UserDoctrineMapper implements UserMapperInterface
      */
     private function getRepository()
     {
-        return $this->getManager()->getRepository('User');
+        return $this->getManager()->getRepository('KelpAppBundle:User');
     }
 
-    /**
-     * @return ManagerRegistry
-     */
-    public function findAll($limit = 10)
+
+    public function findLast($limit = 20)
     {
-        return $this->getRepository()->findBy(null, null, $limit);
+        return $this->getRepository()->findBy([], ['id' => 'DESC'], $limit);
     }
 
 

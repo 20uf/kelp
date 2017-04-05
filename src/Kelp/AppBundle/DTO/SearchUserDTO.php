@@ -6,7 +6,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class SearchUserDTO
 {
     /**
-     * @Assert\();
+     *
      */
     public $text = null;
 
