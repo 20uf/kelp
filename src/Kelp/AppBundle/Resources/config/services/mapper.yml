@@ -3,9 +3,9 @@ services:
         class: Kelp\AppBundle\Mapper\UserDoctrineMapper
         public: false
         arguments: ["@doctrine", "KelpAppBundle:User"]
-        tags: [{name: "kelp_app.mapper", type: "doctrine"}]
+        tags: [{name: "kelp_app.mapper", type: "doctrine", class: "user"}]
     kelp.type_storage.doctrine.mapper:
         class: Kelp\AppBundle\Mapper\TypeStorageDoctrineMapper
         public: false
         arguments: ["@doctrine", "KelpAppBundle:TypeStorage"]
-        tags: [{name: "kelp_app.mapper", type: "doctrine"}]
+        tags: [{name: "kelp_app.mapper", type: "doctrine", class: "type_storage"}]

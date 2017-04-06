@@ -1,10 +1,10 @@
 <?php
-namespace Kelp\AppBundle\Mapper\Manager;
+namespace Kelp\AppBundle\Mapper;
 
 /**
  * Interface MapperInterface
  *
- * @package Kelp\AppBundle\Mapper\Manager
+ * @package Kelp\AppBundle\Mapper
  */
 interface MapperInterface
 {

@@ -23,7 +23,7 @@ FOUND 7 ERRORS AFFECTING 4 LINES
 ----------------------------------------------------------------------
 
 
-FILE: ...undle/DependencyInjection/Compiler/UserMapperManagerCompiler.php
+FILE: ...AppBundle/DependencyInjection/Compiler/MapperManagerCompiler.php
 ----------------------------------------------------------------------
 FOUND 3 ERRORS AFFECTING 3 LINES
 ----------------------------------------------------------------------
@@ -228,7 +228,7 @@ FOUND 11 ERRORS AFFECTING 11 LINES
  33 | ERROR | Missing parameter comment
  34 | ERROR | Missing parameter comment
  35 | ERROR | Missing parameter comment
- 49 | ERROR | Missing function doc comment
+ 50 | ERROR | Missing function doc comment
 ----------------------------------------------------------------------
 
 
@@ -244,16 +244,15 @@ FOUND 3 ERRORS AFFECTING 3 LINES
 
 FILE: ...c/Kelp/AppBundle/EventListener/SearchTypeStorageFormListener.php
 ----------------------------------------------------------------------
-FOUND 5 ERRORS AND 3 WARNINGS AFFECTING 8 LINES
+FOUND 5 ERRORS AND 2 WARNINGS AFFECTING 7 LINES
 ----------------------------------------------------------------------
   2 | ERROR   | Missing file doc comment
-  6 | ERROR   | Missing class doc comment
-  8 | ERROR   | Missing short description in doc comment
-  9 | ERROR   | Missing parameter comment
- 10 | ERROR   | Missing @return tag in function comment
- 14 | WARNING | Line exceeds 85 characters; contains 86 characters
- 16 | WARNING | Line exceeds 85 characters; contains 117 characters
- 22 | WARNING | Line exceeds 85 characters; contains 118 characters
+  7 | ERROR   | Missing class doc comment
+  9 | ERROR   | Missing short description in doc comment
+ 10 | ERROR   | Missing parameter comment
+ 11 | ERROR   | Missing @return tag in function comment
+ 16 | WARNING | Line exceeds 85 characters; contains 107 characters
+ 22 | WARNING | Line exceeds 85 characters; contains 91 characters
 ----------------------------------------------------------------------
 
 
@@ -267,7 +266,7 @@ FOUND 5 ERRORS AND 2 WARNINGS AFFECTING 7 LINES
  10 | ERROR   | Missing parameter comment
  11 | ERROR   | Missing @return tag in function comment
  16 | WARNING | Line exceeds 85 characters; contains 100 characters
- 22 | WARNING | Line exceeds 85 characters; contains 108 characters
+ 22 | WARNING | Line exceeds 85 characters; contains 104 characters
 ----------------------------------------------------------------------
 
 
@@ -301,6 +300,22 @@ FOUND 3 ERRORS AFFECTING 3 LINES
 ----------------------------------------------------------------------
 
 
+FILE: ...rkSpace/kelpdp/src/Kelp/AppBundle/Form/SearchTypeStorageType.php
+----------------------------------------------------------------------
+FOUND 9 ERRORS AFFECTING 9 LINES
+----------------------------------------------------------------------
+  2 | ERROR | Missing file doc comment
+ 11 | ERROR | Missing class doc comment
+ 13 | ERROR | Missing short description in doc comment
+ 14 | ERROR | Missing parameter comment
+ 15 | ERROR | Missing parameter comment
+ 16 | ERROR | Missing @return tag in function comment
+ 26 | ERROR | Missing short description in doc comment
+ 27 | ERROR | Missing parameter comment
+ 28 | ERROR | Missing @return tag in function comment
+----------------------------------------------------------------------
+
+
 FILE: ...root/workSpace/kelpdp/src/Kelp/AppBundle/Form/SearchUserType.php
 ----------------------------------------------------------------------
 FOUND 9 ERRORS AFFECTING 9 LINES
@@ -328,28 +343,57 @@ FOUND 4 ERRORS AFFECTING 4 LINES
 ----------------------------------------------------------------------
 
 
-FILE: ...e/kelpdp/src/Kelp/AppBundle/Mapper/Manager/UserMapperManager.php
+FILE: ...dp/src/Kelp/AppBundle/Mapper/AbstractDoctrineMapperInterface.php
 ----------------------------------------------------------------------
-FOUND 9 ERRORS AND 1 WARNING AFFECTING 10 LINES
+FOUND 10 ERRORS AFFECTING 10 LINES
+----------------------------------------------------------------------
+  2 | ERROR | Missing file doc comment
+  7 | ERROR | Missing class doc comment
+  9 | ERROR | Missing short description in doc comment
+ 14 | ERROR | Missing short description in doc comment
+ 22 | ERROR | Missing parameter comment
+ 23 | ERROR | Missing parameter comment
+ 32 | ERROR | Missing short description in doc comment
+ 35 | ERROR | Private method name
+    |       | "AbstractDoctrineMapperInterface::getManager" must be
+    |       | prefixed with an underscore
+ 40 | ERROR | Missing short description in doc comment
+ 49 | ERROR | Missing function doc comment
+----------------------------------------------------------------------
+
+
+FILE: ...Space/kelpdp/src/Kelp/AppBundle/Mapper/Manager/MapperManager.php
+----------------------------------------------------------------------
+FOUND 17 ERRORS AND 3 WARNINGS AFFECTING 20 LINES
 ----------------------------------------------------------------------
   2 | ERROR   | Missing file doc comment
   6 | ERROR   | Missing class doc comment
-  8 | ERROR   | Private member variable "mappers" must be prefixed
+  8 | ERROR   | Missing short description in doc comment
+ 11 | ERROR   | Private member variable "mappers" must be prefixed
     |         | with an underscore
- 10 | ERROR   | Private member variable "defaultType" must be
+ 13 | ERROR   | Missing short description in doc comment
+ 16 | ERROR   | Private member variable "defaultType" must be
     |         | prefixed with an underscore
- 12 | ERROR   | Missing function doc comment
- 17 | ERROR   | Missing function doc comment
- 22 | ERROR   | Missing function doc comment
- 25 | WARNING | Line exceeds 85 characters; contains 86 characters
- 31 | ERROR   | Missing short description in doc comment
- 39 | ERROR   | Missing function doc comment
+ 21 | ERROR   | Missing parameter comment
+ 28 | ERROR   | Missing short description in doc comment
+ 29 | ERROR   | Missing parameter comment
+ 30 | ERROR   | Missing parameter comment
+ 31 | ERROR   | Missing parameter comment
+ 32 | ERROR   | Missing @return tag in function comment
+ 33 | WARNING | Line exceeds 85 characters; contains 100 characters
+ 38 | ERROR   | Missing short description in doc comment
+ 39 | ERROR   | Missing parameter comment
+ 45 | WARNING | Line exceeds 85 characters; contains 86 characters
+ 51 | ERROR   | Missing short description in doc comment
+ 59 | ERROR   | Missing short description in doc comment
+ 60 | ERROR   | Missing parameter comment
+ 66 | WARNING | Line exceeds 85 characters; contains 94 characters
 ----------------------------------------------------------------------
 
 
 FILE: ...t/workSpace/kelpdp/src/Kelp/AppBundle/Mapper/MapperInterface.php
 ----------------------------------------------------------------------
-FOUND 7 ERRORS AFFECTING 4 LINES
+FOUND 6 ERRORS AFFECTING 3 LINES
 ----------------------------------------------------------------------
   2 | ERROR | Missing file doc comment
   8 | ERROR | Missing @category tag in class comment
@@ -357,39 +401,29 @@ FOUND 7 ERRORS AFFECTING 4 LINES
   8 | ERROR | Missing @license tag in class comment
   8 | ERROR | Missing @link tag in class comment
  11 | ERROR | Missing function doc comment
- 13 | ERROR | Missing function doc comment
 ----------------------------------------------------------------------
 
 
-FILE: ...orkSpace/kelpdp/src/Kelp/AppBundle/Mapper/UserDoctrineMapper.php
-----------------------------------------------------------------------
-FOUND 11 ERRORS AFFECTING 11 LINES
-----------------------------------------------------------------------
-  2 | ERROR | Missing file doc comment
-  8 | ERROR | Missing class doc comment
- 10 | ERROR | Missing short description in doc comment
- 13 | ERROR | Private member variable "doctrine" must be prefixed
-    |       | with an underscore
- 18 | ERROR | Missing parameter comment
- 25 | ERROR | Missing short description in doc comment
- 28 | ERROR | Private method name "UserDoctrineMapper::getManager"
-    |       | must be prefixed with an underscore
- 33 | ERROR | Missing short description in doc comment
- 36 | ERROR | Private method name "UserDoctrineMapper::getRepository"
-    |       | must be prefixed with an underscore
- 42 | ERROR | Missing function doc comment
- 48 | ERROR | Missing function doc comment
-----------------------------------------------------------------------
-
-
-FILE: ...rkSpace/kelpdp/src/Kelp/AppBundle/Mapper/UserMapperInterface.php
+FILE: ...e/kelpdp/src/Kelp/AppBundle/Mapper/TypeStorageDoctrineMapper.php
 ----------------------------------------------------------------------
 FOUND 4 ERRORS AFFECTING 4 LINES
 ----------------------------------------------------------------------
  2 | ERROR | Missing file doc comment
  4 | ERROR | Missing class doc comment
- 6 | ERROR | Missing function doc comment
- 8 | ERROR | Missing function doc comment
+ 6 | ERROR | Missing short description in doc comment
+ 7 | ERROR | Missing parameter comment
+----------------------------------------------------------------------
+
+
+FILE: ...orkSpace/kelpdp/src/Kelp/AppBundle/Mapper/UserDoctrineMapper.php
+----------------------------------------------------------------------
+FOUND 5 ERRORS AFFECTING 5 LINES
+----------------------------------------------------------------------
+ 2 | ERROR | Missing file doc comment
+ 4 | ERROR | Missing class doc comment
+ 6 | ERROR | Missing short description in doc comment
+ 7 | ERROR | Missing parameter comment
+ 8 | ERROR | Missing parameter comment
 ----------------------------------------------------------------------
 
 
@@ -401,7 +435,7 @@ FOUND 5 ERRORS AFFECTING 5 LINES
   6 | ERROR | Missing class doc comment
   8 | ERROR | Missing short description in doc comment
  16 | ERROR | Missing parameter comment
- 23 | ERROR | Missing function doc comment
+ 22 | ERROR | Missing function doc comment
 ----------------------------------------------------------------------
 
 
@@ -428,7 +462,7 @@ FOUND 6 ERRORS AND 1 WARNING AFFECTING 4 LINES
  10 | ERROR   | Missing @license tag in class comment
  10 | ERROR   | Missing @link tag in class comment
  13 | ERROR   | Missing short description in doc comment
- 19 | WARNING | Line exceeds 85 characters; contains 110 characters
+ 19 | WARNING | Line exceeds 85 characters; contains 100 characters
 ----------------------------------------------------------------------
 
 
@@ -473,4 +507,4 @@ FOUND 6 ERRORS AND 1 WARNING AFFECTING 4 LINES
  20 | WARNING | Line exceeds 85 characters; contains 105 characters
 ----------------------------------------------------------------------
 
-Time: 59ms; Memory: 6Mb
+Time: 66ms; Memory: 6Mb

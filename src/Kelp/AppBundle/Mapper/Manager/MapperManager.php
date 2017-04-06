@@ -5,21 +5,41 @@ use Kelp\AppBundle\Mapper\AbstractDoctrineMapperInterface;
 
 class MapperManager
 {
+    /**
+     * @var array
+     */
     private $mappers = [];
 
+    /**
+     * @var string
+     */
     private $defaultType;
 
-    public function __construct($defaultType)
+    /**
+     * MapperManager constructor.
+     *
+     * @param string $defaultType
+     */
+    public function __construct(string $defaultType)
     {
         $this->defaultType = $defaultType;
     }
 
-    public function addMapper($type, AbstractDoctrineMapperInterface $mapper)
+    /**
+     * @param string                          $type
+     * @param string                          $entity
+     * @param AbstractDoctrineMapperInterface $mapper
+     */
+    public function addMapper(string $type, string $entity, AbstractDoctrineMapperInterface $mapper)
     {
-        $this->mappers[$type] = $mapper;
+        $this->mappers[$type][$entity] = $mapper;
     }
 
-    public function getMapper($type)
+    /**
+     * @param string $type
+     * @return mixed
+     */
+    public function getMapper(string $type)
     {
         if (!isset($this->mappers[$type])) {
             throw new \LogicException(sprintf('Mapper for %s does not exist', $type));
@@ -36,8 +56,24 @@ class MapperManager
         return $this->defaultType;
     }
 
+    /**
+     * @return mixed
+     */
     public function getDefaultMapper()
     {
         return $this->getMapper($this->getDefaultType());
+    }
+
+    /**
+     * @param string $entity
+     * @return mixed
+     */
+    public function getDefaultMapperFor(string $entity)
+    {
+        if (!isset($this->getMapper($this->getDefaultType())[$entity])) {
+            throw new \LogicException(sprintf('Mapper for enity %s does not exist', $entity));
+        }
+
+        return $this->getMapper($this->getDefaultType())[$entity];
     }
 }

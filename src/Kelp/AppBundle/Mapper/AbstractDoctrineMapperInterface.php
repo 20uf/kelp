@@ -4,7 +4,7 @@ namespace Kelp\AppBundle\Mapper;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\Common\Persistence\ObjectManager;
 
-abstract class AbstractDoctrineMapperInterface
+abstract class AbstractDoctrineMapperInterface implements MapperInterface
 {
     /**
      * @var ManagerRegistry
@@ -20,7 +20,7 @@ abstract class AbstractDoctrineMapperInterface
      * UserDoctrineMapper constructor.
      *
      * @param ManagerRegistry $doctrine
-     * @param string $entityName
+     * @param string          $entityName
      */
     public function __construct(ManagerRegistry $doctrine, string $entityName)
     {
@@ -42,6 +42,7 @@ abstract class AbstractDoctrineMapperInterface
      */
     protected function getRepository()
     {
+
         return $this->getManager()->getRepository($this->entityName);
     }
 

@@ -21,10 +21,10 @@ class MapperManagerCompiler implements CompilerPassInterface
 
         foreach ($mappers as $mapperId => $mapperTags) {
             foreach ($mapperTags as $tag) {
-                if (isset($tag['type'])) {
+                if (isset($tag['type']) and isset($tag['class'])) {
                     $managerDefinition->addMethodCall(
                         'addMapper',
-                        [$tag['type'], new Reference($mapperId)]
+                        [$tag['type'],$tag['class'], new Reference($mapperId)]
                     );
                 }
             }

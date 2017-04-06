@@ -30,20 +30,21 @@ abstract class AbstractFormListener implements ListenerInterface
     /**
      * SearchUserFormListener constructor.
      *
-     * @param FactoryInterface     $dtoFactory
-     * @param FormFactoryInterface $formFactory
-     * @param AbstractDoctrineMapperInterface  $mapper
-     * @param Request              $request
+     * @param FactoryInterface                $dtoFactory
+     * @param FormFactoryInterface            $formFactory
+     * @param AbstractDoctrineMapperInterface $mapper
+     * @param Request                         $request
      */
     public function __construct(
         FactoryInterface $dtoFactory,
         FormFactoryInterface $formFactory,
-        AbstractDoctrineMapperInterface  $mapper,
-        Request              $request
-    ) {
+        AbstractDoctrineMapperInterface $mapper,
+        Request $request
+    )
+    {
         $this->dtoFactory  = $dtoFactory;
         $this->formFactory = $formFactory;
-        $this->mapper  = $mapper;
+        $this->mapper      = $mapper;
         $this->request     = $request;
     }
 

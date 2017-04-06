@@ -16,7 +16,7 @@ class SettingTypeStorageProcessor extends AbstractProcessor
     public function process()
     {
         $event = new GenericEvent();
-        //        $this->eventDispatcher->dispatch('kelp.app.setting_type_storage.processor.process', $event);
+        $this->eventDispatcher->dispatch('kelp.app.setting_type_storage.processor.process', $event);
 
         return $event->getArguments();
     }

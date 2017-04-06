@@ -11,11 +11,7 @@ class SearchUserFormListener extends AbstractFormListener
      */
     public function onProcess(GenericEvent $event)
     {
-
-        dump($this->mapper);die;
-        dump($this->mapper->findLast());die;
         $event->setArgument('search_result', $this->mapper->findLast());
-
 
         $form = $this->formFactory->create(SearchUserType::class, $this->dtoFactory->newInstance());
 
