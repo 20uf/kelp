@@ -3,22 +3,28 @@ namespace Kelp\AppBundle\Processor;
 
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\EventDispatcher\GenericEvent;
 
-abstract class AbstractProcessor implements ProcessorInterface
+class GenericProcessor implements ProcessorInterface
 {
+    const EVENT_NAME = 'process';
     /**
      * @var EventDispatcher
      */
     protected $dispatcher;
 
     /**
-     * SettingTypeStorageProcessor constructor.
-     *
-     * @param EventDispatcher $eventDispatcher
+     * @var GenericEvent
+     */
+    protected $event;
+
+    /**
+     * GenericProcessor constructor.
      */
     public function __construct()
     {
         $this->dispatcher = new EventDispatcher();
+        $this->event      = new GenericEvent();
     }
 
     /**
@@ -38,5 +44,13 @@ abstract class AbstractProcessor implements ProcessorInterface
         $this->dispatcher->addSubscriber($subscriber);
     }
 
-    abstract public function process();
+    /**
+     * @return array
+     */
+    public function process()
+    {
+        $this->dispatcher->dispatch(self::EVENT_NAME, $this->event);
+
+        return $this->event->getArguments();
+    }
 }

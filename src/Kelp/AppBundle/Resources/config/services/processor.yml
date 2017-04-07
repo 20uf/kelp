@@ -1,12 +1,8 @@
 services:
     kelp.type_storage.processor:
-        class: Kelp\AppBundle\Processor\SettingTypeStorageProcessor
-        arguments:
-          - "@event_dispatcher"
-          - "@=service('request_stack').getCurrentRequest()"
+        class: Kelp\AppBundle\Processor\GenericProcessor
+        calls: [['addSubscriber', ['@kelp.type_storage.search_form.listener']]]
 
     kelp.user.processor:
-        class: Kelp\AppBundle\Processor\SettingUserProcessor
-        arguments:
-          - "@event_dispatcher"
-          - "@=service('request_stack').getCurrentRequest()"
+        class: Kelp\AppBundle\Processor\GenericProcessor
+        calls: [['addSubscriber', ['@kelp.user.search_form.listener']]]
