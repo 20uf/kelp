@@ -1,6 +1,4 @@
 /app/config/parameters.yml
-/build/
-/phpunit.xml
 /var/*
 !/var/cache
 /var/cache/*
@@ -12,12 +10,7 @@
 /var/sessions/*
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
-/vendor/*
-/bower_components/
-/node_modules/
 /web/bundles/
-/web/css/
-/web/js/
-/web/fonts/
 .idea/
 doc/
+vendor/
