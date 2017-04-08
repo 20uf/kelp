@@ -17,7 +17,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="kelp_type_storage")
  * @package                                                                              Kelp\AppBundle\Entity
  */
-class TypeStorage
+class TypeStorage implements EntityInterface
 {
     /**
      * @ORM\Id
@@ -39,6 +39,18 @@ class TypeStorage
     private $comment;
 
     /**
+     * TypeStorage constructor.
+     *
+     * @param string      $label
+     * @param string|null $comment
+     */
+    public function __construct(string $label, string $comment = null)
+    {
+        $this->label   = $label;
+        $this->comment = $comment;
+    }
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -57,7 +69,7 @@ class TypeStorage
     /**
      * @return string
      */
-    public function getLabel(): string
+    public function getLabel():string
     {
         return $this->label;
     }
@@ -73,7 +85,7 @@ class TypeStorage
     /**
      * @return string
      */
-    public function getComment(): string
+    public function getComment():string
     {
         return $this->comment;
     }

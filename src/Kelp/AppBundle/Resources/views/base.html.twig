@@ -47,7 +47,12 @@
                 {% endblock %}
                 {% block content %}{% endblock %}
             </div>
-            {% block javascripts %}{% endblock %}
+            <script>
+                $(function() {
+                    {% block javascripts %}{% endblock %}
+                });
+            </script>
+
         {% endblock %}
     </body>
 </html>

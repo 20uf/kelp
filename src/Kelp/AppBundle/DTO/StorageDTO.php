@@ -6,7 +6,7 @@ namespace Kelp\AppBundle\DTO;
  *
  * @package Kelp\AppBundle\DTO
  */
-class StorageDTO
+class StorageDTO implements DTOInterface
 {
 
 }

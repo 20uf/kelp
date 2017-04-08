@@ -1,7 +1,7 @@
 <?php
 namespace Kelp\AppBundle\Mapper;
 
-class UserDoctrineMapper extends AbstractDoctrineMapperInterface
+class UserDoctrineMapper extends AbstractDoctrineMapper
 {
     /**
      * @param string $text

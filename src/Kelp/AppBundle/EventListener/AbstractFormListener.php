@@ -1,8 +1,8 @@
 <?php
 namespace Kelp\AppBundle\EventListener;
 
-use Kelp\AppBundle\Factory\FactoryInterface;
-use Kelp\AppBundle\Mapper\AbstractDoctrineMapperInterface;
+use Kelp\AppBundle\Factory\DTOFactoryInterface;
+use Kelp\AppBundle\Mapper\AbstractDoctrineMapper;
 use Kelp\AppBundle\Mapper\UserMapperInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 abstract class AbstractFormListener implements EventSubscriberInterface, ListenerInterface
 {
     /**
-     * @var FactoryInterface
+     * @var DTOFactoryInterface
      */
     protected $dtoFactory;
     /**
@@ -20,7 +20,7 @@ abstract class AbstractFormListener implements EventSubscriberInterface, Listene
      */
     protected $formFactory;
     /**
-     * @var AbstractDoctrineMapperInterface
+     * @var AbstractDoctrineMapper
      */
     protected $mapper;
     /**
@@ -33,15 +33,15 @@ abstract class AbstractFormListener implements EventSubscriberInterface, Listene
     /**
      * SearchUserFormListener constructor.
      *
-     * @param FactoryInterface                $dtoFactory
-     * @param FormFactoryInterface            $formFactory
-     * @param AbstractDoctrineMapperInterface $mapper
-     * @param Request                         $request
+     * @param DTOFactoryInterface    $dtoFactory
+     * @param FormFactoryInterface   $formFactory
+     * @param AbstractDoctrineMapper $mapper
+     * @param Request                $request
      */
     public function __construct(
-        FactoryInterface $dtoFactory,
+        DTOFactoryInterface $dtoFactory,
         FormFactoryInterface $formFactory,
-        AbstractDoctrineMapperInterface $mapper,
+        AbstractDoctrineMapper $mapper,
         Request $request
     ) {
     

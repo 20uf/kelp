@@ -22,6 +22,6 @@ class SearchTypeStorageFormListener extends AbstractFormListener
             $event->setArgument('search_result', $this->mapper->findBySearch($data->text, $data->role));
         }
 
-        $event->setArgument('form', $form->createView());
+        $event->setArgument('form_search', $form->createView());
     }
 }

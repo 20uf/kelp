@@ -1,11 +1,17 @@
 {% extends 'KelpAppBundle::base.html.twig' %}
 
+{% form_theme form_search '@KelpApp/Form/bootstrap_3_inline_layout.html.twig' %}
+
 {% block content %}
     <h1>Setting Type Storage</h1>
 
-    <div class="highlight">
-        {{ form(form) }}
-
+    <div class="row highlight">
+        <div class="col-xs-11">
+            {{ form(form_search) }}
+        </div>
+        <div class="col-xs-1">
+            <button id="add_type_storage" class="btn btn-primary">Add</button>
+        </div>
     </div>
 
     <div>
@@ -24,4 +30,11 @@
             </tbody>
         </table>
     </div>
+
+    {% include "@KelpApp/Setting/Modal/add_type_storage.html.twig"%}
 {% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% include("@js/Setting/type_storage.js.twig") %}
+{% endblock %}
+

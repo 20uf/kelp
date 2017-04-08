@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="fos_user")
  * @package                                                                       Kelp\AppBundle\Entity
  */
-class User extends BaseUser
+class User extends BaseUser implements EntityInterface
 {
     /**
      * @ORM\Id

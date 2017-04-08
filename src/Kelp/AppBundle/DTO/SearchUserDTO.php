@@ -3,7 +3,7 @@ namespace Kelp\AppBundle\DTO;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-class SearchUserDTO
+class SearchUserDTO implements DTOInterface
 {
     /**
      *

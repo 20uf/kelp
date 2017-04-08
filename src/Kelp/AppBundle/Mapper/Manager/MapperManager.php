@@ -1,7 +1,7 @@
 <?php
 namespace Kelp\AppBundle\Mapper\Manager;
 
-use Kelp\AppBundle\Mapper\AbstractDoctrineMapperInterface;
+use Kelp\AppBundle\Mapper\AbstractDoctrineMapper;
 
 class MapperManager
 {
@@ -26,11 +26,11 @@ class MapperManager
     }
 
     /**
-     * @param string                          $type
-     * @param string                          $entity
-     * @param AbstractDoctrineMapperInterface $mapper
+     * @param string                 $type
+     * @param string                 $entity
+     * @param AbstractDoctrineMapper $mapper
      */
-    public function addMapper(string $type, string $entity, AbstractDoctrineMapperInterface $mapper)
+    public function addMapper(string $type, string $entity, AbstractDoctrineMapper $mapper)
     {
         $this->mappers[$type][$entity] = $mapper;
     }

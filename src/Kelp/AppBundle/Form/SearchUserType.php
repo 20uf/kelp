@@ -29,6 +29,6 @@ class SearchUserType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefault('data', SearchUserDTO::class);
+        $resolver->setDefault('data_class', SearchUserDTO::class);
     }
 }

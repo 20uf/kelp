@@ -1,7 +1,7 @@
 <?php
 namespace Kelp\AppBundle\Factory;
 
-interface FactoryInterface
+interface DTOFactoryInterface
 {
     public function newInstance();
 }

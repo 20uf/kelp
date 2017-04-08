@@ -1,7 +1,9 @@
 services:
     kelp.type_storage.processor:
         class: Kelp\AppBundle\Processor\GenericProcessor
-        calls: [['addSubscriber', ['@kelp.type_storage.search_form.listener']]]
+        calls:
+          - ['addSubscriber', ['@kelp.type_storage.search_form.listener']]
+          - ['addSubscriber', ['@kelp.type_storage.add_form.listener']]
 
     kelp.user.processor:
         class: Kelp\AppBundle\Processor\GenericProcessor

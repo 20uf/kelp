@@ -1,7 +1,7 @@
 <?php
 namespace Kelp\AppBundle\DTO;
 
-class SearchTypeStorageDTO
+class SearchTypeStorageDTO implements DTOInterface
 {
     /**
      *Assert\NotNull

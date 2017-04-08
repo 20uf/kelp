@@ -10,7 +10,15 @@ services:
     kelp.type_storage.search_form.listener:
             class: Kelp\AppBundle\EventListener\SearchTypeStorageFormListener
             arguments:
-              - "@kelp.user.search_dto.factory"
+              - "@kelp.type_storage.search_dto.factory"
+              - "@form.factory"
+              - "@=service('kelp.mapper_manager').getDefaultMapperFor('type_storage')"
+              - "@=service('request_stack').getCurrentRequest()"
+
+    kelp.type_storage.add_form.listener:
+            class: Kelp\AppBundle\EventListener\AddTypeStorageFormListener
+            arguments:
+              - "@kelp.type_storage.dto.factory"
               - "@form.factory"
               - "@=service('kelp.mapper_manager').getDefaultMapperFor('type_storage')"
               - "@=service('request_stack').getCurrentRequest()"

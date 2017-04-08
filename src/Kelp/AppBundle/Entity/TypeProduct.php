@@ -6,7 +6,7 @@ namespace Kelp\AppBundle\Entity;
  *
  * @package Kelp\AppBundle\Entity
  */
-class TypeProduct
+class TypeProduct implements EntityInterface
 {
 
 }
