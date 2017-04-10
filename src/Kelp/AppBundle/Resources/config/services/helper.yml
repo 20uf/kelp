@@ -1,0 +1,7 @@
+services:
+    table_action.helper:
+        class: Kelp\AppBundle\Helper\TableActionHelper
+        arguments: ['@router']
+
+    form_error.helper:
+        class: Kelp\AppBundle\Helper\FormErrorHelper

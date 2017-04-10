@@ -1,12 +1,12 @@
 <?php
-namespace Kelp\AppBundle\Execption;
+namespace Kelp\AppBundle\Exception;
 
 use Throwable;
 
 /**
  * Class FactoryException
  *
- * @package Kelp\AppBundle\Execption
+ * @package Kelp\AppBundle\Exception
  */
 class FactoryException extends \Exception
 {

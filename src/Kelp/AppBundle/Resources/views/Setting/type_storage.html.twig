@@ -10,21 +10,25 @@
             {{ form(form_search) }}
         </div>
         <div class="col-xs-1">
-            <button id="add_type_storage" class="btn btn-primary">Add</button>
+            <button id="show_add_type_storage" class="btn btn-primary">Add</button>
         </div>
     </div>
 
     <div>
-        <table class="table table-striped table-bordered 1table-condensed">
+        <table class="table table-striped table-bordered table-condensed">
             <thead>
             <tr class="active">
                 <th> label </th>
+                <th> comment </th>
+                <th> action </th>
             </tr>
             </thead>
             <tbody>
-            {% for type_storage in search_result %}
+            {% for key, type_storage in search_result %}
                 <tr>
                     <td> {{ type_storage.label|e }} </td>
+                    <td> {{ type_storage.comment|e }} </td>
+                    <td> {{ table_action[key]|raw }} </td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -32,6 +36,13 @@
     </div>
 
     {% include "@KelpApp/Setting/Modal/add_type_storage.html.twig"%}
+
+    {% set modal_parameters = {
+    delete_title: 'Suppression d\'un type_storage',
+    delete_question: 'Etes-vous sûr de vouloir supprimer ce type storage?'
+    } %}
+    {% include'KelpAppBundle:Modal:modal_delete.html.twig' with modal_parameters only %}
+
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}

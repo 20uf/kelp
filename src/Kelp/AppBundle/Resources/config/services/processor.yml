@@ -5,6 +5,16 @@ services:
           - ['addSubscriber', ['@kelp.type_storage.search_form.listener']]
           - ['addSubscriber', ['@kelp.type_storage.add_form.listener']]
 
+    kelp.add_type_storage.processor:
+        class: Kelp\AppBundle\Processor\GenericProcessor
+        calls:
+          - ['addSubscriber', ['@kelp.type_storage.add_form.listener']]
+          
+    kelp.delete_type_storage.processor:
+        class: Kelp\AppBundle\Processor\GenericProcessor
+        calls:
+          - ['addSubscriber', ['@kelp.type_storage.delete.listener']]
+
     kelp.user.processor:
         class: Kelp\AppBundle\Processor\GenericProcessor
         calls: [['addSubscriber', ['@kelp.user.search_form.listener']]]

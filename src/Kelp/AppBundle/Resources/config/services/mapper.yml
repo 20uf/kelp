@@ -4,8 +4,12 @@ services:
         public: false
         arguments: ["@doctrine", "KelpAppBundle:User"]
         tags: [{name: "kelp_app.mapper", type: "doctrine", class: "user"}]
+
     kelp.type_storage.doctrine.mapper:
         class: Kelp\AppBundle\Mapper\TypeStorageDoctrineMapper
         public: false
-        arguments: ["@doctrine", "KelpAppBundle:TypeStorage"]
+        arguments:
+          - "@doctrine"
+          - "KelpAppBundle:TypeStorage"
+          - "@kelp.type_storage.factory"
         tags: [{name: "kelp_app.mapper", type: "doctrine", class: "type_storage"}]

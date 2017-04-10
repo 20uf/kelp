@@ -13,10 +13,14 @@ use Symfony\Component\Validator\Constraints as Assert;
 class TypeStorageDTO implements DTOInterface
 {
     /**
+     * @Assert\NotBlank()
+     * @Assert\Type("alpha")
      */
     public $label;
 
     /**
+     * @Assert\NotBlank()
+     * @Assert\Regex(pattern="/\D/")
      */
     public $comment;
 }

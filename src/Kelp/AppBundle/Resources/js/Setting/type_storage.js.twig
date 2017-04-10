@@ -1,5 +1,60 @@
-var $modalAdd = $('#modal_add_type_storage')
+var $modalAdd = $('#modal_add_type_storage');
+var $formAdd = $('#form_add_type_storage');
+var $modalAddTitle = $('#modal_add_type_storage h4');
 
-$('body').on('click', '#add_type_storage', function () {
+$body.on('click', '#show_add_type_storage', function () {
+
+    $('div').removeClass('has-error')
+    $('span').remove('.help-block');
+
+    $modalAddTitle.html('Add Type Storage');
     $modalAdd.modal('show');
 });
+
+$body.on('click', '.btn-edit', function () {
+
+    $modalAddTitle.html('Edit Type Storage');
+    $modalAdd.modal('show');
+});
+
+$body.on('click', '#submit_add_type_storage', function () {
+
+    var data = $formAdd.serialize();
+
+    $('div').removeClass('has-error')
+    $('span').remove('.help-block');
+
+    $.ajax({
+        type: "POST",
+        url: "{{ path('kelp_add_setting_type_storage') }}",
+        data: data
+    }).done(function () {
+            window.location  = "{{ path('kelp_setting_type_storage') }}";
+    }).fail(function (jqXHR) {
+        if (jqXHR.status === 400) {
+            var response = jqXHR.responseJSON;
+            if (response.errorMessage != undefined) {
+                addError('type_storage_', response.errorMessage);
+            }
+        }
+    });
+});
+
+function addError(formName, listError) {
+
+    for (var error in listError)
+    {
+        $('#' + formName + error).parents('.form-group').addClass('has-error');
+
+        $('#' + formName + error).parent().append(''+
+
+                '<span class="help-block">' +
+                    '<ul class="list-unstyled">'+
+                        '<li>'+
+                            '<span class="fa fa-exclamation-triangle"></span> '+
+                            listError[error] +
+                        '</li>'+
+                    '</ul>' +
+                '</span>');
+    }
+}

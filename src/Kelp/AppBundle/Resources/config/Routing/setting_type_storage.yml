@@ -1,0 +1,15 @@
+kelp_setting_type_storage:
+    path:     /type/storage
+    defaults: { _controller: KelpAppBundle:Setting:typeStorage }
+
+kelp_add_setting_type_storage:
+    path:     /add/type/storage
+    defaults: { _controller: KelpAppBundle:Setting:addTypeStorage }
+    methods: 'POST'
+
+kelp_delete_setting_type_storage:
+    path:     /delete/type/storage/{id}
+    defaults: { _controller: KelpAppBundle:Setting:deleteTypeStorage }
+    methods: 'DELETE'
+    requirements:
+        id: '\d+'

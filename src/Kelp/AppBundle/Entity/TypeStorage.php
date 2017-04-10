@@ -39,16 +39,10 @@ class TypeStorage implements EntityInterface
     private $comment;
 
     /**
-     * TypeStorage constructor.
-     *
-     * @param string      $label
-     * @param string|null $comment
+     * @ORM\Column(type="boolean")
+     * @var boolean
      */
-    public function __construct(string $label, string $comment = null)
-    {
-        $this->label   = $label;
-        $this->comment = $comment;
-    }
+    private $active = true;
 
     /**
      * @return mixed
@@ -96,5 +90,21 @@ class TypeStorage implements EntityInterface
     public function setComment(string $comment)
     {
         $this->comment = $comment;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isActive():bool
+    {
+        return $this->active;
+    }
+
+    /**
+     * @param bool $active
+     */
+    public function setActive(bool $active)
+    {
+        $this->active = $active;
     }
 }
