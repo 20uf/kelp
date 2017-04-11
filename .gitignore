@@ -1,5 +1,5 @@
 /app/config/parameters.yml
-/web/bundles/
+web/
 .idea/
 doc/
 vendor/

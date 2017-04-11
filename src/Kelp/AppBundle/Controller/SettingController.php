@@ -25,35 +25,15 @@ class SettingController extends Controller
     /**
      * @return Response
      */
-    public function addTypeStorageAction()
+    public function eventTypeStorageAction($event)
     {
-        $event = $this->get('kelp.add_type_storage.processor')->process();
-        if ($event['form_add_error'] === '') {
-            return new Response();
-        }
-        return $event['form_add_error'];
-    }
-
-    /**
-     * @return Response
-     */
-    public function editTypeStorageAction()
-    {
-        $event = $this->get('kelp.edit_type_storage.processor')->process();
-        if ($event['form_edit_error'] === '') {
-            return new Response();
-        }
-        return $event['form_edit_error'];
-    }
-
-    /**
-     * @return Response
-     */
-    public function deleteTypeStorageAction()
-    {
-        $event = $this->get('kelp.delete_type_storage.processor')->process();
+        $event = $this->get('kelp.' . $event . '_type_storage.processor')->process();
         if ($event['error'] === '') {
-            return new Response();
+            $response = '';
+            if(isset($event['response'])) {
+                $response = $event['response'];
+            }
+            return new Response($response);
         }
         return $event['error'];
     }

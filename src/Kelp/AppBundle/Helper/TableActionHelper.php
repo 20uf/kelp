@@ -27,20 +27,27 @@ class TableActionHelper implements TableHelperInterface
      */
     public function addTableAction(array $table, array $element)
     {
+        $tableAction = [];
         foreach ($table as $key => $value) {
             $action = [];
             $action[] = '<div class="btn-group" role="group">';
             if (array_key_exists('edit', $element)) {
-                $editUrl = $this->router->generate($element['edit'], ['id' => $value->getId()]);
+                $editUrl = $this->router->generate(
+                    $element['edit'],
+                    [ 'event' => 'edit', 'id' => $value->getId()]
+            );
                 $action[] =
                 '<button type="button" class="btn-edit btn btn-default btn-xs" title="Editer"'.
-                        'data-url="' . $editUrl . '">'.
+                        'data-url="' . $editUrl . '" data-id="' . $value->getId() . '">'.
                             '<i class="fa fa-pencil fa-lg"></i>'.
                 '</button>';
             }
 
             if (array_key_exists('delete', $element)) {
-                $deleteUrl =  $this->router->generate($element['delete'], ['id' => $value->getId()]);
+                $deleteUrl =  $this->router->generate(
+                    $element['delete'],
+                    [ 'event' => 'delete', 'id' => $value->getId()]
+                );
                 $action[] =
                     '<button type="button" class="btn-delete btn btn-danger btn-xs" title="Editer"'.
                         'data-url="' . $deleteUrl . '">'.

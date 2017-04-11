@@ -16,7 +16,6 @@ class SearchTypeStorageFormListener extends AbstractFormListener
     public function onProcess(GenericEvent $event)
     {
         $table = $this->mapper->findLast();
-        $tableAction = $this->tableHelper->addTableAction($table, self::TABLE_ACTION);
 
         $event->setArgument('search_result', $table);
 
@@ -26,10 +25,15 @@ class SearchTypeStorageFormListener extends AbstractFormListener
 
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
-            $table = $this->mapper->findBySearch($data->text, $data->role);
-            $tableAction = $this->tableHelper->addTableAction($table, self::TABLE_ACTION);
+
+            if($data->text !== null) {
+                $table = $this->mapper->findBySearch($data->text);
+            }
+
             $event->setArgument('search_result', $table);
         }
+
+        $tableAction = $this->tableHelper->addTableAction($table, self::TABLE_ACTION);
 
         $event->setArgument('table_action', $tableAction);
         $event->setArgument('form_search', $form->createView());

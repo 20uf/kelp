@@ -7,16 +7,11 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="Kelp\AppBundle\Entity\Repository\UserRepository")
- * @ORM\Table(name="fos_user")
- */
-
-/**
  * Class User
  *
  * @ORM\Entity(repositoryClass="Kelp\AppBundle\Entity\Repository\UserRepository")
  * @ORM\Table(name="fos_user")
- * @package                                                                       Kelp\AppBundle\Entity
+ * @package Kelp\AppBundle\Entity
  */
 class User extends BaseUser implements EntityInterface
 {

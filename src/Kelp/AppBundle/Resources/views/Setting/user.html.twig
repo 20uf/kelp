@@ -29,6 +29,10 @@
                         <td> {{ user.lastLogin|date("d/m/Y") }} </td>
                         <td> {% for role in user.roles %} {{ role }} {% endfor %}</td>
                     </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3" class="text-center"> No User Availaible </td>
+                    </tr>
                 {% endfor %}
             </tbody>
         </table>

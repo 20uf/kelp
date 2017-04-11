@@ -9,29 +9,25 @@ use Symfony\Component\EventDispatcher\GenericEvent;
  *
  * @package Kelp\AppBundle\EventListener
  */
-class AddTypeStorageFormListener extends AbstractFormListener
+class EditTypeStorageFormListener extends AbstractFormListener
 {
     /**
      * @param GenericEvent $event
      */
     public function onProcess(GenericEvent $event)
     {
-        $function = 'add';
         $dto      = $this->dtoFactory->newInstance();
         $form     = $this->formFactory->create(TypeStorageType::class, $dto);
         $form->handleRequest($this->request);
 
         $error    = $this->formError->jsonResponse($form->getErrors(true));
-        if ($this->request->get('id') !== null) {
-            $function = 'edit';
-        }
+        $id = $this->request->get('id');
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->mapper->$function($dto);
+            $this->mapper->edit($id, $dto);
             $error = '';
         }
 
         $event->setArgument('error', $error);
-        $event->setArgument('form_event', $form->createView());
     }
 }

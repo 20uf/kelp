@@ -1,32 +1,60 @@
-var $modalAdd = $('#modal_add_type_storage');
-var $formAdd = $('#form_add_type_storage');
-var $modalAddTitle = $('#modal_add_type_storage h4');
+var $modal = $('#modal_type_storage');
+var $formModal = $('#form_modal_type_storage');
+var $modalTitle = $('#modal_type_storage h4');
 
-$body.on('click', '#show_add_type_storage', function () {
+$body.on('click', '#show_modal_type_storage', function () {
 
     $('div').removeClass('has-error')
     $('span').remove('.help-block');
 
-    $modalAddTitle.html('Add Type Storage');
-    $modalAdd.modal('show');
+
+    $modal.data('url', "{{ path('kelp_add_setting_type_storage', {'event': 'add'}) }}");
+    $modalTitle.html('Add Type Storage');
+    $modal.modal('show');
 });
 
 $body.on('click', '.btn-edit', function () {
 
-    $modalAddTitle.html('Edit Type Storage');
-    $modalAdd.modal('show');
+    var idTypeStorage = $(this).data('id');
+    var urlFind = "{{ path('kelp_find_setting_type_storage', {'event' : 'find', 'id': '0' }) }}";
+    urlFind = urlFind.replace('0', idTypeStorage);
+    var urlEdit = $(this).data('url');
+
+    $.ajax({
+        type: "GET",
+        url: urlFind,
+    }).done(function (data) {
+
+
+        $('#type_storage_label').val(data.label);
+        $('#type_storage_comment').val(data.comment);
+        $modalTitle.html('Edit Type Storage');
+        $modal.data('url', urlEdit);
+        $modal.modal('show');
+    }).fail(function (jqXHR) {
+        if (jqXHR.status === 400) {
+            var response = jqXHR.responseJSON;
+            if (response.errorMessage != undefined) {
+                addError('type_storage_', response.errorMessage);
+            }
+        }
+    });
+
+    $modalTitle.html('Edit Type Storage');
+    $modal.modal('show');
 });
 
-$body.on('click', '#submit_add_type_storage', function () {
+$body.on('click', '#submit_modal_type_storage', function () {
 
-    var data = $formAdd.serialize();
+    var url = $modal.data('url');
+    var data = $formModal.serialize();
 
     $('div').removeClass('has-error')
     $('span').remove('.help-block');
 
     $.ajax({
         type: "POST",
-        url: "{{ path('kelp_add_setting_type_storage') }}",
+        url: url,
         data: data
     }).done(function () {
             window.location  = "{{ path('kelp_setting_type_storage') }}";

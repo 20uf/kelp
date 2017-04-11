@@ -10,7 +10,7 @@
             {{ form(form_search) }}
         </div>
         <div class="col-xs-1">
-            <button id="show_add_type_storage" class="btn btn-primary">Add</button>
+            <button id="show_modal_type_storage" class="btn btn-primary">Add</button>
         </div>
     </div>
 
@@ -30,12 +30,16 @@
                     <td> {{ type_storage.comment|e }} </td>
                     <td> {{ table_action[key]|raw }} </td>
                 </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3" class="text-center"> No Type Storage Availaible </td>
+                </tr>
             {% endfor %}
             </tbody>
         </table>
     </div>
 
-    {% include "@KelpApp/Setting/Modal/add_type_storage.html.twig"%}
+    {% include "@KelpApp/Setting/Modal/type_storage.html.twig"%}
 
     {% set modal_parameters = {
     delete_title: 'Suppression d\'un type_storage',

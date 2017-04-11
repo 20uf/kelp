@@ -3,13 +3,32 @@ kelp_setting_type_storage:
     defaults: { _controller: KelpAppBundle:Setting:typeStorage }
 
 kelp_add_setting_type_storage:
-    path:     /add/type/storage
-    defaults: { _controller: KelpAppBundle:Setting:addTypeStorage }
+    path:     /{event}/type/storage
+    defaults: { _controller: KelpAppBundle:Setting:eventTypeStorage }
     methods: 'POST'
+    requirements:
+        event: '\w+'
+
+kelp_find_setting_type_storage:
+    path:     /{event}/type/storage/{id}
+    defaults: { _controller: KelpAppBundle:Setting:eventTypeStorage,  _format: json   }
+    methods: 'GET'
+    requirements:
+        event: '\w+'
+        id: '\d+'
+
+kelp_edit_setting_type_storage:
+    path:     /{event}/type/storage/{id}
+    defaults: { _controller: KelpAppBundle:Setting:eventTypeStorage }
+    methods: 'POST'
+    requirements:
+        event: '\w+'
+        id: '\d+'
 
 kelp_delete_setting_type_storage:
-    path:     /delete/type/storage/{id}
-    defaults: { _controller: KelpAppBundle:Setting:deleteTypeStorage }
+    path:     /{event}/type/storage/{id}
+    defaults: { _controller: KelpAppBundle:Setting:eventTypeStorage }
     methods: 'DELETE'
     requirements:
+        event: '\w+'
         id: '\d+'

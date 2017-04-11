@@ -31,9 +31,27 @@ services:
               - "@form_error.helper"
               - "@table_action.helper"
 
+    kelp.type_storage.edit_form.listener:
+            class: Kelp\AppBundle\EventListener\EditTypeStorageFormListener
+            arguments:
+              - "@kelp.type_storage.dto.factory"
+              - "@form.factory"
+              - "@=service('kelp.mapper_manager').getDefaultMapperFor('type_storage')"
+              - "@=service('request_stack').getCurrentRequest()"
+              - "@form_error.helper"
+              - "@table_action.helper"
+
 
     kelp.type_storage.delete.listener:
             class: Kelp\AppBundle\EventListener\DeleteTypeStorageListener
             arguments:
               - "@=service('kelp.mapper_manager').getDefaultMapperFor('type_storage')"
               - "@=service('request_stack').getCurrentRequest()"
+
+
+    kelp.type_storage.find.listener:
+            class: Kelp\AppBundle\EventListener\FindTypeStorageListener
+            arguments:
+              - "@=service('kelp.mapper_manager').getDefaultMapperFor('type_storage')"
+              - "@=service('request_stack').getCurrentRequest()"
+              - "@serializer"

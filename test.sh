@@ -42,7 +42,7 @@ then
     mkdir -p "doc"
 fi
 
-runner "$PHP vendor/bin/phpcbf src/"
+runner "$PHP vendor/bin/phpcbf --standard=PSR2 src/"
 echo "$TEST_RES" > doc/phpcbf.txt
 
 test "$PHP vendor/bin/phpunit" PHPUnit 100
