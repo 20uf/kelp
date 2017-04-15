@@ -10,21 +10,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ path('kelp_app_homepage') }}">Kelp</a>
+            <a class="navbar-brand" href="{{ path('kelp.dashboard.home') }}">Kelp</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 {% if is_granted("ROLE_USER") %}
-                <li {{ currentPath == path('kelp_app_homepage') ? 'class="active"' : ''}}>
-                    <a href="{{ path('kelp_app_homepage') }}">Dashboard</a>
+                <li {{ currentPath == path('kelp.dashboard.home') ? 'class="active"' : ''}}>
+                    <a href="{{ path('kelp.dashboard.home') }}">Dashboard</a>
                 </li>
                 {% endif %}
                 {#{% if is_granted("ROLE_ADMIN") %}#}
-                    <li {{ currentPath == path('kelp_setting_type_storage') ? 'class="active"' : ''}}>
-                        <a href="{{ path('kelp_setting_type_storage') }}">TypeStorage</a>
+                    <li {{ currentPath == path('kelp.setting.type_storage') ? 'class="active"' : ''}}>
+                        <a href="{{ path('kelp.setting.type_storage') }}">TypeStorage</a>
                     </li>
-                    <li {{ currentPath == path('kelp_setting_user') ? 'class="active"' : ''}}>
-                        <a href="{{ path('kelp_setting_user') }}">User</a>
+                    <li {{ currentPath == path('kelp.setting.user') ? 'class="active"' : ''}}>
+                        <a href="{{ path('kelp.setting.user') }}">User</a>
                     </li>
                 {#{% endif %}#}
             </ul>

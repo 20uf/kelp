@@ -23,7 +23,7 @@ class UserRepository extends EntityRepository
 
         $builder
             ->select('user.username')
-            ->from($this->getClassName(), 'user');
+            ->from($this->getClassName(), $class);
 
         if ($name !== null) {
             $builder

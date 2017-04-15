@@ -1,11 +1,13 @@
-app:
-  resource: 'Routing/setting_type_storage.yml'
-  prefix:   /setting
-
-kelp_app_homepage:
+kelp.home:
     path:     /
-    defaults: { _controller: KelpAppBundle:Dashboard:index }
+    defaults:
+        _controller: KelpAppBundle:Generic:view
+        element: "home"
 
-kelp_setting_user:
-    path:     /setting/user
-    defaults: { _controller: KelpAppBundle:Setting:user }
+dashboard:
+  resource: 'Routing/dashboard.yml'
+  prefix:   /dashboard
+
+setting:
+  resource: 'Routing/setting.yml'
+  prefix:   /setting

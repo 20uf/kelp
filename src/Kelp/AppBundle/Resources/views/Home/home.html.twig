@@ -1,0 +1,18 @@
+{% extends "KelpAppBundle::base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    {% include("@css/home.css.twig") %}
+{% endblock %}
+{% block navbar %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ path('kelp.home') }}">Kelp</a>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+{% block content %}
+    <a href="{{ path("fos_user_security_login") }}" class="btn-primary btn">login</a>
+    <a href="{{ path("fos_user_security_login") }}" class="btn-primary btn">register</a>
+{% endblock %}

@@ -1,0 +1,18 @@
+function addError(formName, listError) {
+
+    for (var error in listError)
+    {
+        $('#' + formName + error).parents('.form-group').addClass('has-error');
+
+        $('#' + formName + error).parent().append(''+
+
+            '<span class="help-block">' +
+                '<ul class="list-unstyled">'+
+                    '<li>'+
+                        '<span class="fa fa-exclamation-triangle"></span> '+
+                        listError[error] +
+                    '</li>'+
+                '</ul>' +
+            '</span>');
+    }
+}

@@ -13,3 +13,13 @@ services:
           - "KelpAppBundle:TypeStorage"
           - "@kelp.type_storage.factory"
         tags: [{name: "kelp_app.mapper", type: "doctrine", class: "type_storage"}]
+
+
+    kelp.user_type_storage.doctrine.mapper:
+        class: Kelp\AppBundle\Mapper\UserTypeStorageDoctrineMapper
+        public: false
+        arguments:
+          - "@doctrine"
+          - "KelpAppBundle:TypeStorage"
+          - "@kelp.user_type_storage.factory"
+        tags: [{name: "kelp_app.mapper", type: "doctrine", class: "user_type_storage"}]

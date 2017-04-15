@@ -43,15 +43,28 @@ services:
 
 
     kelp.type_storage.delete.listener:
-            class: Kelp\AppBundle\EventListener\DeleteTypeStorageListener
+            class: Kelp\AppBundle\EventListener\DeleteListener
             arguments:
               - "@=service('kelp.mapper_manager').getDefaultMapperFor('type_storage')"
               - "@=service('request_stack').getCurrentRequest()"
 
+    kelp.user.delete.listener:
+            class: Kelp\AppBundle\EventListener\DeleteListener
+            arguments:
+              - "@=service('kelp.mapper_manager').getDefaultMapperFor('user')"
+              - "@=service('request_stack').getCurrentRequest()"
+
 
     kelp.type_storage.find.listener:
-            class: Kelp\AppBundle\EventListener\FindTypeStorageListener
+            class: Kelp\AppBundle\EventListener\FindListener
             arguments:
               - "@=service('kelp.mapper_manager').getDefaultMapperFor('type_storage')"
+              - "@=service('request_stack').getCurrentRequest()"
+              - "@serializer"
+
+    kelp.user.find.listener:
+            class: Kelp\AppBundle\EventListener\FindListener
+            arguments:
+              - "@=service('kelp.mapper_manager').getDefaultMapperFor('user')"
               - "@=service('request_stack').getCurrentRequest()"
               - "@serializer"

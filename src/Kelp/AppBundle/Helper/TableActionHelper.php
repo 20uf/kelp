@@ -34,7 +34,7 @@ class TableActionHelper implements TableHelperInterface
             if (array_key_exists('edit', $element)) {
                 $editUrl = $this->router->generate(
                     $element['edit'],
-                    [ 'event' => 'edit', 'id' => $value->getId()]
+                    ['id' => $value->getId()]
             );
                 $action[] =
                 '<button type="button" class="btn-edit btn btn-default btn-xs" title="Editer"'.
@@ -46,7 +46,7 @@ class TableActionHelper implements TableHelperInterface
             if (array_key_exists('delete', $element)) {
                 $deleteUrl =  $this->router->generate(
                     $element['delete'],
-                    [ 'event' => 'delete', 'id' => $value->getId()]
+                    ['id' => $value->getId()]
                 );
                 $action[] =
                     '<button type="button" class="btn-delete btn btn-danger btn-xs" title="Editer"'.

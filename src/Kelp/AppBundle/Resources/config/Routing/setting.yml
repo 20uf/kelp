@@ -1,0 +1,74 @@
+kelp.setting.type_storage:
+    path:     /type/storage
+    defaults:
+        _controller: KelpAppBundle:Generic:view
+        element: "setting"
+        entity: "type_storage"
+
+kelp.setting.user:
+    path:     /user
+    defaults:
+        _controller: KelpAppBundle:Generic:view
+        element: "setting"
+        entity: "user"
+
+kelp.add.type_storage:
+    path:     /add/type/storage
+    methods: 'POST'
+    defaults:
+        _controller: KelpAppBundle:Generic:event
+        element: "setting"
+        entity: "type_storage"
+        action: "add"
+
+kelp.find.type_storage:
+    path:     /find/type/storage/{id}
+    methods: 'GET'
+    defaults:
+        _controller: KelpAppBundle:Generic:event
+        _format: json
+        element: "setting"
+        entity: "type_storage"
+        action: "find"
+    requirements:
+        id: '\d+'
+
+kelp.edit.type_storage:
+    path:     /edit/type/storage/{id}
+    defaults:
+        _controller: KelpAppBundle:Generic:event
+        element: "type_storage"
+        action: "edit"
+    methods: 'POST'
+    requirements:
+        id: '\d+'
+
+kelp.delete.type_storage:
+    path:     /delete/type/storage/{id}
+    defaults:
+        _controller: KelpAppBundle:Generic:event
+        element: "type_storage"
+        action: "delete"
+    methods: 'DELETE'
+    requirements:
+        id: '\d+'
+
+kelp.delete.user:
+    path:     /delete/user/{id}
+    defaults:
+        _controller: KelpAppBundle:Generic:event
+        element: "user"
+        action: "delete"
+    methods: 'DELETE'
+    requirements:
+        id: '\d+'
+
+kelp.edit.user:
+    path:     /edit/user/{id}
+    defaults:
+        _controller: KelpAppBundle:Generic:event
+        element: "user"
+        action: "edit"
+    methods: 'POST'
+    requirements:
+        id: '\d+'

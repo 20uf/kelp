@@ -8,7 +8,7 @@ $body.on('click', '#show_modal_type_storage', function () {
     $('span').remove('.help-block');
 
 
-    $modal.data('url', "{{ path('kelp_add_setting_type_storage', {'event': 'add'}) }}");
+    $modal.data('url', "{{ path('kelp.add.type_storage') }}");
     $modalTitle.html('Add Type Storage');
     $modal.modal('show');
 });
@@ -16,7 +16,7 @@ $body.on('click', '#show_modal_type_storage', function () {
 $body.on('click', '.btn-edit', function () {
 
     var idTypeStorage = $(this).data('id');
-    var urlFind = "{{ path('kelp_find_setting_type_storage', {'event' : 'find', 'id': '0' }) }}";
+    var urlFind = "{{ path('kelp.find.type_storage', {'id': '0' }) }}";
     urlFind = urlFind.replace('0', idTypeStorage);
     var urlEdit = $(this).data('url');
 
@@ -57,7 +57,7 @@ $body.on('click', '#submit_modal_type_storage', function () {
         url: url,
         data: data
     }).done(function () {
-            window.location  = "{{ path('kelp_setting_type_storage') }}";
+            window.location  = "{{ path('kelp.setting.type_storage') }}";
     }).fail(function (jqXHR) {
         if (jqXHR.status === 400) {
             var response = jqXHR.responseJSON;
@@ -67,22 +67,3 @@ $body.on('click', '#submit_modal_type_storage', function () {
         }
     });
 });
-
-function addError(formName, listError) {
-
-    for (var error in listError)
-    {
-        $('#' + formName + error).parents('.form-group').addClass('has-error');
-
-        $('#' + formName + error).parent().append(''+
-
-                '<span class="help-block">' +
-                    '<ul class="list-unstyled">'+
-                        '<li>'+
-                            '<span class="fa fa-exclamation-triangle"></span> '+
-                            listError[error] +
-                        '</li>'+
-                    '</ul>' +
-                '</span>');
-    }
-}

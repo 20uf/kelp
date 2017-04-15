@@ -1,0 +1,39 @@
+{% extends "KelpAppBundle::base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    {% include("@css/home.css.twig") %}
+{% endblock %}
+{% block navbar %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ path('kelp.home') }}">Kelp</a>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+{% block content %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    <div class="row">
+        <form action="{{ path("fos_user_security_check") }}" method="post" class="col-md-offset-4 col-md-4 form-signin">
+            <h2 class="form-signin-heading">Login in</h2>
+            {% if csrf_token %}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            {% endif %}
+
+            <label for="username" class="">{{ 'security.login.username'|trans }}</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" required="required"
+                   class="form-control"/>
+
+            <label for="password">{{ 'security.login.password'|trans }}</label>
+            <input type="password" id="password" class="form-control" name="_password" required="required" />
+
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+            <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+
+            <input type="submit" id="_submit" class="btn btn-lg btn-primary btn-block" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+        </form>
+    </div>
+{% endblock %}

@@ -1,12 +1,12 @@
 {% extends 'KelpAppBundle::base.html.twig' %}
 
-{% form_theme form '@KelpApp/Form/bootstrap_3_inline_layout.html.twig' %}
+{% form_theme form_search '@KelpApp/Form/bootstrap_3_inline_layout.html.twig' %}
 
 {% block content %}
     <h1>Setting User</h1>
 
     <div class="highlight">
-        {{ form(form) }}
+        {{ form(form_search) }}
 
     </div>
 
@@ -22,12 +22,13 @@
                 </tr>
             </thead>
             <tbody>
-                {% for user in search_result %}
+                {% for key, user in search_result %}
                     <tr>
                         <td> {{ user.username|e }} </td>
                         <td> {{ user.email|e }} </td>
                         <td> {{ user.lastLogin|date("d/m/Y") }} </td>
                         <td> {% for role in user.roles %} {{ role }} {% endfor %}</td>
+                        <td> {{ table_action[key]|raw }} </td>
                     </tr>
                 {% else %}
                     <tr>
@@ -37,4 +38,10 @@
             </tbody>
         </table>
     </div>
+
+    {% set modal_parameters = {
+    delete_title: 'Suppression d\'un user',
+    delete_question: 'Etes-vous sûr de vouloir supprimer cette user ?'
+    } %}
+    {% include'KelpAppBundle:Modal:modal_delete.html.twig' with modal_parameters only %}
 {% endblock %}

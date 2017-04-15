@@ -49,10 +49,13 @@ abstract class AbstractDoctrineMapper implements MapperInterface
      */
     protected function getRepository()
     {
-
         return $this->getManager()->getRepository($this->entityName);
     }
 
+    /**
+     * @param int $limit
+     * @return mixed
+     */
     public function findLast($limit = 20)
     {
         return $this->getRepository()->findBy(['active' => true], ['id' => 'DESC'], $limit);
