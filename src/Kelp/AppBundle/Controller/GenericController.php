@@ -8,7 +8,6 @@
 
 namespace Kelp\AppBundle\Controller;
 
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,7 +18,7 @@ class GenericController extends Controller
     {
         $element = $request->attributes->get('element');
         $entity = $request->attributes->get('entity');
-        if($entity === null) {
+        if ($entity === null) {
             $entity = $element;
         }
         return $this->render(
@@ -35,7 +34,7 @@ class GenericController extends Controller
         $event = $this->get('kelp.' . $action . '.'.$element.'.processor')->process();
         if ($event['error'] === '') {
             $response = '';
-            if(isset($event['response'])) {
+            if (isset($event['response'])) {
                 $response = $event['response'];
             }
             return new Response($response);

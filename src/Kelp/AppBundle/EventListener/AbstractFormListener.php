@@ -1,6 +1,7 @@
 <?php
 namespace Kelp\AppBundle\EventListener;
 
+use Kelp\AppBundle\Entity\User;
 use Kelp\AppBundle\Factory\DTOFactoryInterface;
 use Kelp\AppBundle\Helper\FormErrorHelper;
 use Kelp\AppBundle\Helper\TableHelperInterface;
@@ -39,6 +40,11 @@ abstract class AbstractFormListener implements EventSubscriberInterface, Listene
      */
     protected $tableHelper;
 
+    /**
+     * @var User
+     */
+    protected $user;
+
     const SUBSCRIBED_EVENTS = ['process' => 'onProcess'];
 
     /**
@@ -52,14 +58,15 @@ abstract class AbstractFormListener implements EventSubscriberInterface, Listene
      * @param TableHelperInterface   $tableHelper
      */
     public function __construct(
-        DTOFactoryInterface     $dtoFactory,
-        FormFactoryInterface    $formFactory,
-        AbstractDoctrineMapper  $mapper,
-        Request                 $request,
-        FormErrorHelper         $formError,
-        TableHelperInterface    $tableHelper
-    ) {
-    
+        DTOFactoryInterface $dtoFactory,
+        FormFactoryInterface $formFactory,
+        AbstractDoctrineMapper $mapper,
+        Request $request,
+        FormErrorHelper $formError,
+        TableHelperInterface $tableHelper = null
+    )
+    {
+
 
         $this->dtoFactory  = $dtoFactory;
         $this->formFactory = $formFactory;

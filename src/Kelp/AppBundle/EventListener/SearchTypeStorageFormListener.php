@@ -10,6 +10,7 @@ class SearchTypeStorageFormListener extends AbstractFormListener
         'edit' => 'kelp.edit.type_storage',
         'delete' => 'kelp.delete.type_storage'
     ];
+
     /**
      * @param GenericEvent $event
      */
@@ -24,7 +25,7 @@ class SearchTypeStorageFormListener extends AbstractFormListener
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
 
-            if($data->text !== null) {
+            if ($data->text !== null) {
                 $table = $this->mapper->findBySearch($data->text);
             }
         }

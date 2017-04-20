@@ -18,7 +18,7 @@ class TypeStorageDoctrineMapper extends AbstractDoctrineMapper
     public function findBySearch(string $text = null)
     {
         $result = [];
-        if($this->getRepository()->findBySearch($text) !== null) {
+        if ($this->getRepository()->findBySearch($text) !== null) {
             $result = $this->getRepository()->findBySearch($text);
         }
         return $result;

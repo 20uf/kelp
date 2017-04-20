@@ -68,3 +68,21 @@ services:
               - "@=service('kelp.mapper_manager').getDefaultMapperFor('user')"
               - "@=service('request_stack').getCurrentRequest()"
               - "@serializer"
+
+    kelp.dashboard.listener:
+            class: Kelp\AppBundle\EventListener\DashboardListener
+            arguments:
+              - "@=service('kelp.mapper_manager').getDefaultMapperFor('user')"
+              - "@=service('request_stack').getCurrentRequest()"
+              - null
+              - "@=service('security.token_storage').getToken().getUser()"
+
+    kelp.user_type_storage.edit_form.listener:
+            class: Kelp\AppBundle\EventListener\EditUserTypeStorageFormListener
+            arguments:
+              - "@kelp.user_type_storage.dto.factory"
+              - "@form.factory"
+              - "@=service('kelp.mapper_manager').getDefaultMapperFor('user')"
+              - "@=service('request_stack').getCurrentRequest()"
+              - "@form_error.helper"
+              - null

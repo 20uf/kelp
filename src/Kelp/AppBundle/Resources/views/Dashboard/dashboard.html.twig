@@ -1,4 +1,9 @@
 {% extends 'KelpAppBundle::base.html.twig' %}
 {% block content %}
     <h1>Your Storage</h1>
+    {% include '@KelpApp/Dashboard/Modal/user_type_storage.html.twig' %}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% include("@js/Dashboard/dashboard.js.twig") %}
 {% endblock %}

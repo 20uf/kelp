@@ -14,14 +14,15 @@ class UserDoctrineMapper extends AbstractDoctrineMapper
     public function findBySearch(string $text = null, string $role = null)
     {
         $result = [];
-        if($this->getRepository()->findBySearch($text, $role) !== null) {
+        if ($this->getRepository()->findBySearch($text, $role) !== null) {
             $result = $this->getRepository()->findBySearch($text, $role);
         }
+
         return $result;
     }
 
     /**
-     * @param int $limit
+     * @param integer $limit
      * @return mixed
      */
     public function findLast($limit = 20)
@@ -30,9 +31,9 @@ class UserDoctrineMapper extends AbstractDoctrineMapper
     }
 
     /**
-     * @param $id
+     * @param string $id
      */
-    public function delete($id)
+    public function delete(string $id)
     {
         /** @var User $user */
         $user = $this->getRepository()->find($id);
@@ -44,10 +45,10 @@ class UserDoctrineMapper extends AbstractDoctrineMapper
     }
 
     /**
-     * @param $id
+     * @param string $id
      * @return User
      */
-    public function find($id)
+    public function find(string $id)
     {
         /** @var User $user */
         $user = $this->getRepository()->find($id);
@@ -59,10 +60,10 @@ class UserDoctrineMapper extends AbstractDoctrineMapper
     }
 
     /**
-     * @param                $id
+     * @param string  $id
      * @param UserDTO $dto
      */
-    public function edit($id, UserDTO $dto)
+    public function edit(string $id, UserDTO $dto)
     {
         /** @var User $user */
         $user = $this->getRepository()->find($id);
@@ -71,5 +72,21 @@ class UserDoctrineMapper extends AbstractDoctrineMapper
         }
         $user->setRoles($dto->roles);
         $this->getManager()->flush($user);
+    }
+
+    /**
+     * @param string  $id
+     * @param UserDTO $dto
+     */
+    public function editTypeStorages(UserDTO $dto)
+    {
+
+        $this->currentUser->setTypeStorages();
+        $this->getManager()->flush($this->currentUser);
+    }
+
+    public function getTypeStorages()
+    {
+        return $this->currentUser->getTypeStorages()->toArray();
     }
 }

@@ -35,7 +35,7 @@ class TableActionHelper implements TableHelperInterface
                 $editUrl = $this->router->generate(
                     $element['edit'],
                     ['id' => $value->getId()]
-            );
+                );
                 $action[] =
                 '<button type="button" class="btn-edit btn btn-default btn-xs" title="Editer"'.
                         'data-url="' . $editUrl . '" data-id="' . $value->getId() . '">'.

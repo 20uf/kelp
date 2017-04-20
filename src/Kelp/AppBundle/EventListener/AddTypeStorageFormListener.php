@@ -22,9 +22,6 @@ class AddTypeStorageFormListener extends AbstractFormListener
         $form->handleRequest($this->request);
 
         $error    = $this->formError->jsonResponse($form->getErrors(true));
-        if ($this->request->get('id') !== null) {
-            $function = 'edit';
-        }
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->mapper->$function($dto);

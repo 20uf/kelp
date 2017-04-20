@@ -18,3 +18,7 @@ services:
     kelp.user_type_storage.factory:
         class: Kelp\AppBundle\Factory\TypeStorageFactory
         public: false
+
+    kelp.user_type_storage.dto.factory:
+        class: Kelp\AppBundle\Factory\UserTypeStorageDTOFactory
+        public: false

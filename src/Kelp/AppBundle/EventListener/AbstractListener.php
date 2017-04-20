@@ -1,6 +1,7 @@
 <?php
 namespace Kelp\AppBundle\EventListener;
 
+use Kelp\AppBundle\Entity\User;
 use Kelp\AppBundle\Mapper\AbstractDoctrineMapper;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
@@ -30,18 +31,26 @@ abstract class AbstractListener implements EventSubscriberInterface, ListenerInt
     protected $serializer;
 
     /**
+     * @var Serializer
+     */
+    protected $currentUser;
+
+    /**
      * AbstractListener constructor.
      *
      * @param AbstractDoctrineMapper $mapper
      * @param Request                $request
      * @param Serializer             $serializer
      */
-    public function __construct(AbstractDoctrineMapper $mapper, Request $request, Serializer $serializer = null)
+    public function __construct(
+        AbstractDoctrineMapper $mapper,
+        Request $request,
+        Serializer $serializer = null
+    )
     {
         $this->mapper      = $mapper;
         $this->request     = $request;
         $this->serializer  = $serializer;
-
     }
 
     /**

@@ -3,3 +3,11 @@ kelp.dashboard.home:
     defaults:
         _controller: KelpAppBundle:Generic:view
         element: "dashboard"
+
+kelp.edit.user_type_storage:
+    path:     /edit/user_type_storage
+    defaults:
+        _controller: KelpAppBundle:Generic:event
+        element: "user_type_storage"
+        action: "edit"
+        methods: "POST"

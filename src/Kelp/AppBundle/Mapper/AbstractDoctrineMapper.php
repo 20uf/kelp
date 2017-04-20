@@ -3,6 +3,7 @@ namespace Kelp\AppBundle\Mapper;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\Common\Persistence\ObjectManager;
+use Kelp\AppBundle\Entity\User;
 use Kelp\AppBundle\Factory\EntityFactoryInterface;
 
 abstract class AbstractDoctrineMapper implements MapperInterface
@@ -23,18 +24,9 @@ abstract class AbstractDoctrineMapper implements MapperInterface
     protected $factory;
 
     /**
-     * AbstractDoctrineMapper constructor.
-     *
-     * @param ManagerRegistry             $doctrine
-     * @param string                      $entityName
-     * @param EntityFactoryInterface|null $factory
+     * @var string
      */
-    public function __construct(ManagerRegistry $doctrine, string $entityName, EntityFactoryInterface $factory = null)
-    {
-        $this->doctrine = $doctrine;
-        $this->entityName = $entityName;
-        $this->factory = $factory;
-    }
+    protected $currentUser;
 
     /**
      * @return ObjectManager
@@ -42,6 +34,27 @@ abstract class AbstractDoctrineMapper implements MapperInterface
     protected function getManager()
     {
         return $this->doctrine->getManager($this->doctrine->getDefaultManagerName());
+    }
+
+    /**
+     * AbstractDoctrineMapper constructor.
+     *
+     * @param ManagerRegistry             $doctrine
+     * @param string                      $entityName
+     * @param EntityFactoryInterface|null $factory
+     * @param User                        $user
+     */
+    public function __construct(
+        ManagerRegistry         $doctrine,
+        string                  $entityName,
+        EntityFactoryInterface  $factory = null,
+        User                    $user = null
+    )
+    {
+        $this->doctrine    = $doctrine;
+        $this->entityName  = $entityName;
+        $this->factory     = $factory;
+        $this->currentUser = $user;
     }
 
     /**

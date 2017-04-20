@@ -1,0 +1,27 @@
+$modalUserTypeStorage = $('#modal_user_type_storage');
+
+{% if type_storages is empty %}
+
+    $modalUserTypeStorage.modal('show');
+
+{% endif %}
+
+$body.on('click', '#submit_modal_user_type_storage', function () {
+
+    var urlEdit = $(this).data('url');
+    var formData = $('#form_modal_user_type_storage').serialize();
+    $.ajax({
+        type: "POST",
+        url: urlEdit,
+        data: formData
+    }).done(function () {
+
+    }).fail(function (jqXHR) {
+        if (jqXHR.status === 400) {
+            var response = jqXHR.responseJSON;
+            if (response.errorMessage != undefined) {
+                addError('type_storage_', response.errorMessage);
+            }
+        }
+    });
+});

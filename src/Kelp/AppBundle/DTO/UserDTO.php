@@ -10,11 +10,16 @@ namespace Kelp\AppBundle\DTO;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
+/**
+ * Class UserDTO
+ *
+ * @package Kelp\AppBundle\DTO
+ */
 class UserDTO implements DTOInterface
 {
     /**
      * @Assert\NotBlank()
      * @Assert\Type("array")
      */
-    public  $roles;
+    public $roles;
 }
