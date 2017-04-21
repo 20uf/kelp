@@ -8,7 +8,6 @@
 
 namespace Kelp\AppBundle\EventListener;
 
-
 use Kelp\AppBundle\Form\UserTypeStorageType;
 use Symfony\Component\EventDispatcher\GenericEvent;
 
@@ -21,15 +20,13 @@ class EditUserTypeStorageFormListener extends AbstractFormListener
         $form->handleRequest($this->request);
 
         $error    = $this->formError->jsonResponse($form->getErrors(true));
-        $id = $this->request->get('id');
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->mapper->edit($dto);
-//            $error = '';
+            $this->mapper->editTypeStorages($dto);
+            $error = '';
         }
 
-        $event->setArgument('form_edit', $form->createView());
+        $event->setArgument('form_type_storages', $form->createView());
         $event->setArgument('error', $error);
     }
-
 }

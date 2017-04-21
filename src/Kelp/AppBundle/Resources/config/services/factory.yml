@@ -1,16 +1,4 @@
 services:
-    kelp.user.search_dto.factory:
-        class: Kelp\AppBundle\Factory\SearchUserDTOFactory
-        public: false
-
-    kelp.type_storage.search_dto.factory:
-        class: Kelp\AppBundle\Factory\SearchTypeStorageDTOFactory
-        public: false
-
-    kelp.type_storage.dto.factory:
-        class: Kelp\AppBundle\Factory\TypeStorageDTOFactory
-        public: false
-
     kelp.type_storage.factory:
         class: Kelp\AppBundle\Factory\TypeStorageFactory
         public: false
@@ -19,6 +7,6 @@ services:
         class: Kelp\AppBundle\Factory\TypeStorageFactory
         public: false
 
-    kelp.user_type_storage.dto.factory:
-        class: Kelp\AppBundle\Factory\UserTypeStorageDTOFactory
+    kelp.storage.factory:
+        class: Kelp\AppBundle\Factory\StorageFactory
         public: false

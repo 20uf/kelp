@@ -8,7 +8,6 @@
 
 namespace Kelp\AppBundle\EventListener;
 
-
 use Kelp\AppBundle\Form\UserTypeStorageType;
 use Symfony\Component\EventDispatcher\GenericEvent;
 
@@ -17,6 +16,6 @@ class DashboardListener extends AbstractListener
     public function onProcess(GenericEvent $event)
     {
         $event->setArgument('type_storages', $this->mapper->getTypeStorages());
+        $event->setArgument('storages', $this->mapper->getStorages());
     }
-
 }

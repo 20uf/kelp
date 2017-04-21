@@ -46,8 +46,8 @@ abstract class AbstractListener implements EventSubscriberInterface, ListenerInt
         AbstractDoctrineMapper $mapper,
         Request $request,
         Serializer $serializer = null
-    )
-    {
+    ) {
+    
         $this->mapper      = $mapper;
         $this->request     = $request;
         $this->serializer  = $serializer;

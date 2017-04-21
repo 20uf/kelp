@@ -14,16 +14,9 @@ class UserRepository extends EntityRepository
     {
         $builder = $this->getEntityManager()->createQueryBuilder();
 
-        $class = $this->getClassName();
-
-        if (strstr($this->getClassName(), '\\')) {
-            $class = explode("\\", $class);
-            $class = end($class);
-        }
-
         $builder
             ->select('user.username')
-            ->from($this->getClassName(), $class);
+            ->from($this->getClassName(), 'user');
 
         if ($name !== null) {
             $builder

@@ -26,12 +26,17 @@ class User extends BaseUser implements EntityInterface
     /**
      * Many User have Many Type Storage.
      * @ORM\ManyToMany(targetEntity="TypeStorage")
-     * @ORM\JoinTable(name="user_type_storage",
+     * @ORM\JoinTable(name="kelp_user_type_storage",
      *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="type_storage_id", referencedColumnName="id", unique=true)}
      *      )
      */
     protected $typeStorages;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Storage", mappedBy="user")
+     **/
+    protected $storages;
 
     /**
      * User constructor.
@@ -40,6 +45,7 @@ class User extends BaseUser implements EntityInterface
     {
         parent::__construct();
         $this->typeStorages = new ArrayCollection();
+        $this->storages     = new ArrayCollection();
     }
 
     /**
@@ -58,4 +64,19 @@ class User extends BaseUser implements EntityInterface
         $this->typeStorages = $typeStorages;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getStorages()
+    {
+        return $this->storages;
+    }
+
+    /**
+     * @param mixed $storages
+     */
+    public function setStorages($storages)
+    {
+        $this->storages = $storages;
+    }
 }

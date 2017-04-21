@@ -8,5 +8,5 @@ namespace Kelp\AppBundle\Entity;
  */
 class Product implements EntityInterface
 {
-
+    private $label;
 }

@@ -2,6 +2,7 @@
 namespace Kelp\AppBundle\Mapper;
 
 use Kelp\AppBundle\DTO\UserDTO;
+use Kelp\AppBundle\DTO\UserTypeStorageDTO;
 use Kelp\AppBundle\Entity\User;
 
 class UserDoctrineMapper extends AbstractDoctrineMapper
@@ -41,7 +42,7 @@ class UserDoctrineMapper extends AbstractDoctrineMapper
             throw new \LogicException(sprintf('impossible to find information for id %s', $id));
         }
         $user->setEnabled(false);
-        $this->getManager()->flush($user);
+        $this->getManager()->flush();
     }
 
     /**
@@ -71,22 +72,25 @@ class UserDoctrineMapper extends AbstractDoctrineMapper
             throw new \LogicException(sprintf('impossible to find information for id %s', $id));
         }
         $user->setRoles($dto->roles);
-        $this->getManager()->flush($user);
+        $this->getManager()->flush();
     }
 
     /**
-     * @param string  $id
-     * @param UserDTO $dto
+     * @param UserTypeStorageDTO $dto
      */
-    public function editTypeStorages(UserDTO $dto)
+    public function editTypeStorages(UserTypeStorageDTO $dto)
     {
-
-        $this->currentUser->setTypeStorages();
-        $this->getManager()->flush($this->currentUser);
+        $this->currentUser->setTypeStorages($dto->label);
+        $this->getManager()->flush();
     }
 
     public function getTypeStorages()
     {
         return $this->currentUser->getTypeStorages()->toArray();
+    }
+
+    public function getStorages()
+    {
+        return $this->currentUser->getStorages()->toArray();
     }
 }

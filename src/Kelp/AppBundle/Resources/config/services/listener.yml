@@ -31,6 +31,16 @@ services:
               - "@form_error.helper"
               - "@table_action.helper"
 
+    kelp.storage.add_form.listener:
+            class: Kelp\AppBundle\EventListener\AddStorageFormListener
+            arguments:
+              - "@kelp.storage.dto.factory"
+              - "@form.factory"
+              - "@=service('kelp.mapper_manager').getDefaultMapperFor('storage')"
+              - "@=service('request_stack').getCurrentRequest()"
+              - "@form_error.helper"
+              - "@table_action.helper"
+
     kelp.type_storage.edit_form.listener:
             class: Kelp\AppBundle\EventListener\EditTypeStorageFormListener
             arguments:
@@ -85,4 +95,18 @@ services:
               - "@=service('kelp.mapper_manager').getDefaultMapperFor('user')"
               - "@=service('request_stack').getCurrentRequest()"
               - "@form_error.helper"
-              - null
+
+    kelp.storage.delete.listener:
+            class: Kelp\AppBundle\EventListener\DeleteListener
+            arguments:
+              - "@=service('kelp.mapper_manager').getDefaultMapperFor('storage')"
+              - "@=service('request_stack').getCurrentRequest()"
+
+    kelp.storage.edit_form.listener:
+            class: Kelp\AppBundle\EventListener\EditStorageFormListener
+            arguments:
+              - "@kelp.storage.dto.factory"
+              - "@form.factory"
+              - "@=service('kelp.mapper_manager').getDefaultMapperFor('storage')"
+              - "@=service('request_stack').getCurrentRequest()"
+              - "@form_error.helper"

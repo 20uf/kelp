@@ -29,7 +29,7 @@ class GenericController extends Controller
 
     public function eventAction(Request $request)
     {
-        $element = $request->attributes->get('element');
+        $element = $request->attributes->get('entity');
         $action = $request->attributes->get('action');
         $event = $this->get('kelp.' . $action . '.'.$element.'.processor')->process();
         if ($event['error'] === '') {

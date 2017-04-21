@@ -8,6 +8,30 @@ kelp.edit.user_type_storage:
     path:     /edit/user_type_storage
     defaults:
         _controller: KelpAppBundle:Generic:event
-        element: "user_type_storage"
+        entity: "user_type_storage"
         action: "edit"
         methods: "POST"
+
+kelp.add.storage:
+    path:     /add/storage/{id}
+    methods: 'POST'
+    defaults:
+        _controller: KelpAppBundle:Generic:event
+        entity: "storage"
+        action: "add"
+
+kelp.delete.storage:
+    path:     /delete/storage/{id}
+    methods: 'DELETE'
+    defaults:
+        _controller: KelpAppBundle:Generic:event
+        entity: "storage"
+        action: "delete"
+
+kelp.edit.storage:
+    path:     /edit/storage/{id}
+    methods: 'POST'
+    defaults:
+        _controller: KelpAppBundle:Generic:event
+        entity: "storage"
+        action: "edit"

@@ -49,8 +49,8 @@ abstract class AbstractDoctrineMapper implements MapperInterface
         string                  $entityName,
         EntityFactoryInterface  $factory = null,
         User                    $user = null
-    )
-    {
+    ) {
+    
         $this->doctrine    = $doctrine;
         $this->entityName  = $entityName;
         $this->factory     = $factory;

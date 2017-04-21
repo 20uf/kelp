@@ -23,4 +23,10 @@ class TypeStorageDTO implements DTOInterface
      * @Assert\Regex(pattern="/\D/")
      */
     public $comment;
+
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Regex(pattern="/\D/")
+     */
+    public $class;
 }

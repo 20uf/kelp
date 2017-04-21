@@ -25,9 +25,9 @@ $body.on('click', '.btn-edit', function () {
         url: urlFind,
     }).done(function (data) {
 
-
         $('#type_storage_label').val(data.label);
         $('#type_storage_comment').val(data.comment);
+        $('#type_storage_class').val(data.class);
         $modalTitle.html('Edit Type Storage');
         $modal.data('url', urlEdit);
         $modal.modal('show');

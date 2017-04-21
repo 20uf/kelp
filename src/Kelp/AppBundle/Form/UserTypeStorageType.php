@@ -8,7 +8,6 @@
 
 namespace Kelp\AppBundle\Form;
 
-
 use Doctrine\ORM\EntityRepository;
 use Kelp\AppBundle\DTO\UserTypeStorageDTO;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;

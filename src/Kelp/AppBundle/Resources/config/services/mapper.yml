@@ -17,3 +17,13 @@ services:
           - "KelpAppBundle:TypeStorage"
           - "@kelp.type_storage.factory"
         tags: [{name: "kelp_app.mapper", type: "doctrine", class: "type_storage"}]
+
+    kelp.storage.doctrine.mapper:
+        class: Kelp\AppBundle\Mapper\StorageDoctrineMapper
+        public: false
+        arguments:
+          - "@doctrine"
+          - "KelpAppBundle:Storage"
+          - "@kelp.storage.factory"
+          - "@=service('security.token_storage').getToken().getUser()"
+        tags: [{name: "kelp_app.mapper", type: "doctrine", class: "storage"}]

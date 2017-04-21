@@ -12,7 +12,12 @@ services:
         class: Kelp\AppBundle\Processor\GenericProcessor
         calls:
           - ['addSubscriber', ['@kelp.type_storage.add_form.listener']]
-          
+
+    kelp.add.storage.processor:
+        class: Kelp\AppBundle\Processor\GenericProcessor
+        calls:
+          - ['addSubscriber', ['@kelp.storage.add_form.listener']]
+
     kelp.delete.type_storage.processor:
         class: Kelp\AppBundle\Processor\GenericProcessor
         calls:
@@ -42,8 +47,19 @@ services:
         calls:
           - ['addSubscriber', ['@kelp.dashboard.listener']]
           - ['addSubscriber', ['@kelp.user_type_storage.edit_form.listener']]
+          - ['addSubscriber', ['@kelp.storage.add_form.listener']]
 
     kelp.edit.user_type_storage.processor:
         class: Kelp\AppBundle\Processor\GenericProcessor
         calls:
-          - ['addSubscriber', ['@kelp.type_storage.edit_form.listener']]
+          - ['addSubscriber', ['@kelp.user_type_storage.edit_form.listener']]
+
+    kelp.delete.storage.processor:
+        class: Kelp\AppBundle\Processor\GenericProcessor
+        calls:
+          - ['addSubscriber', ['@kelp.storage.delete.listener']]
+
+    kelp.edit.storage.processor:
+        class: Kelp\AppBundle\Processor\GenericProcessor
+        calls:
+          - ['addSubscriber', ['@kelp.storage.edit_form.listener']]

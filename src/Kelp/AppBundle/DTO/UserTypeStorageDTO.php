@@ -1,6 +1,8 @@
 <?php
 namespace Kelp\AppBundle\DTO;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Class UserTypeStorageDTO
  *
@@ -10,7 +12,7 @@ class UserTypeStorageDTO implements DTOInterface
 {
     /**
      * @Assert\NotBlank()
-     * @Assert\Type("array")
      */
+    //* @Assert\Type("ArrayCollection")
     public $label = [];
 }

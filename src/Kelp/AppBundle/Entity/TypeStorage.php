@@ -39,6 +39,12 @@ class TypeStorage implements EntityInterface
     private $comment;
 
     /**
+     * @ORM\Column(type="string", length=50)
+     * @var string
+     */
+    private $class;
+
+    /**
      * @ORM\Column(type="boolean")
      * @var boolean
      */
@@ -90,6 +96,22 @@ class TypeStorage implements EntityInterface
     public function setComment(string $comment)
     {
         $this->comment = $comment;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClass()
+    {
+        return $this->class;
+    }
+
+    /**
+     * @param mixed $class
+     */
+    public function setClass($class)
+    {
+        $this->class = $class;
     }
 
     /**

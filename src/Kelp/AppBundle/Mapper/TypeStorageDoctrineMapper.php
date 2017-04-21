@@ -62,6 +62,7 @@ class TypeStorageDoctrineMapper extends AbstractDoctrineMapper
         }
         $typeStorage->setLabel($dto->label);
         $typeStorage->setComment($dto->comment);
+        $typeStorage->setClass($dto->class);
         $this->getManager()->flush($typeStorage);
     }
 

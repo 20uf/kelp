@@ -1,26 +1,82 @@
-$modalUserTypeStorage = $('#modal_user_type_storage');
+var $modalUserTypeStorage = $('#modal_user_type_storage');
+var $fornModalUserTypeStorage = $('#form_modal_user_type_storage');
+var $modalStorage = $('#modal_storage');
+var $modalStorageTitle = $('#modal_storage h4');
+var $fornModalStorage = $('#form_modal_storage');
 
 {% if type_storages is empty %}
 
-    $modalUserTypeStorage.modal('show');
+$modalUserTypeStorage.modal('show');
 
 {% endif %}
 
 $body.on('click', '#submit_modal_user_type_storage', function () {
 
-    var urlEdit = $(this).data('url');
-    var formData = $('#form_modal_user_type_storage').serialize();
+    var urlEdit  = $(this).data('url');
+    var formData = $fornModalUserTypeStorage.serialize();
+
     $.ajax({
         type: "POST",
-        url: urlEdit,
+        url : urlEdit,
         data: formData
     }).done(function () {
-
+        window.location = "{{ path('kelp.dashboard.home') }}";
     }).fail(function (jqXHR) {
         if (jqXHR.status === 400) {
             var response = jqXHR.responseJSON;
             if (response.errorMessage != undefined) {
                 addError('type_storage_', response.errorMessage);
+            }
+        }
+    });
+});
+
+$body.on('click', '.btn-add-storage', function () {
+
+    $('div').removeClass('has-error')
+    $('span').remove('.help-block');
+
+    var url = $(this).data('url');
+
+    $modalStorage.data('url', url);
+    $modalStorageTitle.html('Add Storage');
+    $modalStorage.modal('show');
+});
+
+$body.on('click', '.btn-edit', function () {
+
+    $('div').removeClass('has-error')
+    $('span').remove('.help-block');
+
+    var url = $(this).data('url');
+
+    var label = $(this).data('label');
+    $('#storage_label').val(label);
+
+    $modalStorage.data('url', url);
+    $modalStorageTitle.html('Edit Storage');
+    $modalStorage.modal('show');
+});
+
+$body.on('click', '#submit_modal_storage', function () {
+
+    var url = $modalStorage.data('url');
+    var data = $fornModalStorage.serialize();
+
+    $('div').removeClass('has-error')
+    $('span').remove('.help-block');
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: data
+    }).done(function () {
+        window.location  = "{{ path('kelp.dashboard.home') }}";
+    }).fail(function (jqXHR) {
+        if (jqXHR.status === 400) {
+            var response = jqXHR.responseJSON;
+            if (response.errorMessage != undefined) {
+                addError('storage_', response.errorMessage);
             }
         }
     });

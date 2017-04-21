@@ -1,15 +1,22 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: groot
+ * Date: 16/04/2017
+ * Time: 16:28
+ */
+
 namespace Kelp\AppBundle\EventListener;
 
-use Kelp\AppBundle\Form\TypeStorageType;
+use Kelp\AppBundle\Form\StorageType;
 use Symfony\Component\EventDispatcher\GenericEvent;
 
 /**
- * Class AddTypeStorageFormListener
+ * Class EditStorageFormListener
  *
  * @package Kelp\AppBundle\EventListener
  */
-class AddTypeStorageFormListener extends AbstractFormListener
+class EditStorageFormListener extends AbstractFormListener
 {
     /**
      * @param GenericEvent $event
@@ -17,17 +24,17 @@ class AddTypeStorageFormListener extends AbstractFormListener
     public function onProcess(GenericEvent $event)
     {
         $dto      = $this->dtoFactory->newInstance();
-        $form     = $this->formFactory->create(TypeStorageType::class, $dto);
+        $form     = $this->formFactory->create(StorageType::class, $dto);
         $form->handleRequest($this->request);
 
         $error    = $this->formError->jsonResponse($form->getErrors(true));
+        $id = $this->request->get('id');
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->mapper->add($dto);
+            $this->mapper->edit($id, $dto);
             $error = '';
         }
 
         $event->setArgument('error', $error);
-        $event->setArgument('form_event', $form->createView());
     }
 }

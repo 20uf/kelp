@@ -64,8 +64,8 @@ abstract class AbstractFormListener implements EventSubscriberInterface, Listene
         Request $request,
         FormErrorHelper $formError,
         TableHelperInterface $tableHelper = null
-    )
-    {
+    ) {
+    
 
 
         $this->dtoFactory  = $dtoFactory;

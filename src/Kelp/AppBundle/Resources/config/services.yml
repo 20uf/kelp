@@ -1,5 +1,6 @@
 imports:
     - { resource: services/factory.yml }
+    - { resource: services/dto_factory.yml }
     - { resource: services/helper.yml }
     - { resource: services/listener.yml }
     - { resource: services/manager.yml }
