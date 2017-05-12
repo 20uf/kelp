@@ -32,44 +32,44 @@ class UserDoctrineMapper extends AbstractDoctrineMapper
     }
 
     /**
-     * @param string $id
+     * @param string $idUser
      */
-    public function delete(string $id)
+    public function delete(string $idUser)
     {
         /** @var User $user */
-        $user = $this->getRepository()->find($id);
+        $user = $this->getRepository()->find($idUser);
         if (!$user) {
-            throw new \LogicException(sprintf('impossible to find information for id %s', $id));
+            throw new \LogicException(sprintf('impossible to find information for id %s', $idUser));
         }
         $user->setEnabled(false);
         $this->getManager()->flush();
     }
 
     /**
-     * @param string $id
+     * @param string $idUser
      * @return User
      */
-    public function find(string $id)
+    public function find(string $idUser)
     {
         /** @var User $user */
-        $user = $this->getRepository()->find($id);
+        $user = $this->getRepository()->find($idUser);
         if (!$user) {
-            throw new \LogicException(sprintf('impossible to find information for id %s', $id));
+            throw new \LogicException(sprintf('impossible to find information for id %s', $idUser));
         }
 
         return $user;
     }
 
     /**
-     * @param string  $id
+     * @param string  $idUser
      * @param UserDTO $dto
      */
-    public function edit(string $id, UserDTO $dto)
+    public function edit(string $idUser, UserDTO $dto)
     {
         /** @var User $user */
-        $user = $this->getRepository()->find($id);
+        $user = $this->getRepository()->find($idUser);
         if (!$user) {
-            throw new \LogicException(sprintf('impossible to find information for id %s', $id));
+            throw new \LogicException(sprintf('impossible to find information for id %s', $idUser));
         }
         $user->setRoles($dto->roles);
         $this->getManager()->flush();

@@ -35,30 +35,30 @@ class TypeStorageDoctrineMapper extends AbstractDoctrineMapper
     }
 
     /**
-     * @param $id
+     * @param string $idTypeStorage
      * @return TypeStorage
      */
-    public function find($id)
+    public function find(string $idTypeStorage)
     {
         /** @var TypeStorage $typeStorage */
-        $typeStorage = $this->getRepository()->find($id);
+        $typeStorage = $this->getRepository()->find($idTypeStorage);
         if (!$typeStorage) {
-            throw new \LogicException(sprintf('impossible to find information for id %s', $id));
+            throw new \LogicException(sprintf('impossible to find information for id %s', $idTypeStorage));
         }
 
         return $typeStorage;
     }
 
     /**
-     * @param                $id
+     * @param string         $idTypeStorage
      * @param TypeStorageDTO $dto
      */
-    public function edit($id, TypeStorageDTO $dto)
+    public function edit(string $idTypeStorage, TypeStorageDTO $dto)
     {
         /** @var TypeStorage $typeStorage */
-        $typeStorage = $this->getRepository()->find($id);
+        $typeStorage = $this->getRepository()->find($idTypeStorage);
         if (!$typeStorage) {
-            throw new \LogicException(sprintf('impossible to find information for id %s', $id));
+            throw new \LogicException(sprintf('impossible to find information for id %s', $idTypeStorage));
         }
         $typeStorage->setLabel($dto->label);
         $typeStorage->setComment($dto->comment);

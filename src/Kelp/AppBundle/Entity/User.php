@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Class User
  *
  * @ORM\Entity(repositoryClass="Kelp\AppBundle\Entity\Repository\UserRepository")
- * @ORM\Table(name="fos_user")
+ * @ORM\Table(name="kelp_user")
  * @package Kelp\AppBundle\Entity
  */
 class User extends BaseUser implements EntityInterface
@@ -28,7 +28,7 @@ class User extends BaseUser implements EntityInterface
      * @ORM\ManyToMany(targetEntity="TypeStorage")
      * @ORM\JoinTable(name="kelp_user_type_storage",
      *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="type_storage_id", referencedColumnName="id", unique=true)}
+     *      inverseJoinColumns={@ORM\JoinColumn(name="type_storage_id", referencedColumnName="id")}
      *      )
      */
     protected $typeStorages;

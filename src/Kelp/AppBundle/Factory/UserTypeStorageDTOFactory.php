@@ -10,11 +10,18 @@ namespace Kelp\AppBundle\Factory;
 
 use Kelp\AppBundle\DTO\UserTypeStorageDTO;
 
+/**
+ * Class UserTypeStorageDTOFactory
+ *
+ * @package Kelp\AppBundle\Factory
+ */
 class UserTypeStorageDTOFactory implements DTOFactoryInterface
 {
+    /**
+     * @return UserTypeStorageDTO
+     */
     public function newInstance()
     {
-        $dto = new UserTypeStorageDTO();
-        return $dto;
+        return new UserTypeStorageDTO();
     }
 }

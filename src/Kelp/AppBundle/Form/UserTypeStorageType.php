@@ -15,9 +15,18 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Class UserTypeStorageType
+ *
+ * @package Kelp\AppBundle\Form
+ */
 class UserTypeStorageType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array                $options
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options = null)
     {
         $builder->add(
             'label',
@@ -34,10 +43,11 @@ class UserTypeStorageType extends AbstractType
                 'expanded' => true,
             ]
         );
-
-        $options;
     }
 
+    /**
+     * @param OptionsResolver $resolver
+     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefault('data_class', UserTypeStorageDTO::class);

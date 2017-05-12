@@ -15,7 +15,8 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Entity(repositoryClass="Kelp\AppBundle\Entity\Repository\TypeStorageRepository")
  * @ORM\Table(name="kelp_type_storage")
- * @package                                                                              Kelp\AppBundle\Entity
+ *
+ * @package Kelp\AppBundle\Entity
  */
 class TypeStorage implements EntityInterface
 {
@@ -56,14 +57,6 @@ class TypeStorage implements EntityInterface
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
     }
 
     /**

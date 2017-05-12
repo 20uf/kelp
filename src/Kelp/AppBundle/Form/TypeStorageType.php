@@ -8,9 +8,18 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Class TypeStorageType
+ *
+ * @package Kelp\AppBundle\Form
+ */
 class TypeStorageType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array                $options
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options = null)
     {
         $builder
             ->add(
@@ -28,9 +37,11 @@ class TypeStorageType extends AbstractType
                 TextareaType::class,
                 ['required' => false]
             );
-        $options;
     }
 
+    /**
+     * @param OptionsResolver $resolver
+     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefault('data_class', TypeStorageDTO::class);

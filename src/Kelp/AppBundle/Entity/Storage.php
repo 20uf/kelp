@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Entity(repositoryClass="Kelp\AppBundle\Entity\Repository\StorageRepository")
  * @ORM\Table(name="kelp_storage")
+ *
  * @package Kelp\AppBundle\Entity
  */
 class Storage implements EntityInterface
@@ -32,7 +33,7 @@ class Storage implements EntityInterface
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="TypeStorage")
+     * @ORM\ManyToOne(targetEntity="torage")
      * @ORM\JoinColumn(name="type_storage_id", referencedColumnName="id")
      **/
     private $typeStorage;
@@ -43,14 +44,6 @@ class Storage implements EntityInterface
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
     }
 
     /**

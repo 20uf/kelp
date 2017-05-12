@@ -8,13 +8,18 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Class SearchTypeStorageType
+ *
+ * @package Kelp\AppBundle\Form
+ */
 class SearchTypeStorageType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
      * @param array                $options
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options = null)
     {
         $builder
             ->add('text', TextType::class, ['required' => false])

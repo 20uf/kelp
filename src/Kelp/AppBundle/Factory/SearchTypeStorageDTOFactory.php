@@ -3,11 +3,18 @@ namespace Kelp\AppBundle\Factory;
 
 use Kelp\AppBundle\DTO\SearchTypeStorageDTO;
 
+/**
+ * Class SearchTypeStorageDTOFactory
+ *
+ * @package Kelp\AppBundle\Factory
+ */
 class SearchTypeStorageDTOFactory implements DTOFactoryInterface
 {
+    /**
+     * @return SearchTypeStorageDTO
+     */
     public function newInstance()
     {
-        $dto = new SearchTypeStorageDTO();
-        return $dto;
+        return new SearchTypeStorageDTO();
     }
 }

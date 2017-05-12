@@ -11,8 +11,16 @@ namespace Kelp\AppBundle\EventListener;
 use Kelp\AppBundle\Form\UserTypeStorageType;
 use Symfony\Component\EventDispatcher\GenericEvent;
 
+/**
+ * Class DashboardListener
+ *
+ * @package Kelp\AppBundle\EventListener
+ */
 class DashboardListener extends AbstractListener
 {
+    /**
+     * @param GenericEvent $event]
+     */
     public function onProcess(GenericEvent $event)
     {
         $event->setArgument('type_storages', $this->mapper->getTypeStorages());

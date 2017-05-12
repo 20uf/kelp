@@ -3,11 +3,18 @@ namespace Kelp\AppBundle\Factory;
 
 use Kelp\AppBundle\DTO\StorageDTO;
 
+/**
+ * Class StorageDTOFactory
+ *
+ * @package Kelp\AppBundle\Factory
+ */
 class StorageDTOFactory implements DTOFactoryInterface
 {
+    /**
+     * @return StorageDTO
+     */
     public function newInstance()
     {
-        $dto = new StorageDTO();
-        return $dto;
+        return new StorageDTO();
     }
 }

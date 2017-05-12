@@ -1,22 +1,29 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: groot
+ * Date: 22/04/2017
+ * Time: 10:04
+ */
+
 namespace Kelp\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Class Product
+ * Class TypeProduct
  *
- * @ORM\Entity(repositoryClass="Kelp\AppBundle\Entity\Repository\ProductRepository")
- * @ORM\Table(name="kelp_product")
+ * @ORM\Entity(repositoryClass="Kelp\AppBundle\Entity\Repository\TypeProductRepository")
+ * @ORM\Table(name="kelp_type_product")
  *
  * @package Kelp\AppBundle\Entity
  */
-class Product implements EntityInterface
+class TypeProduct implements EntityInterface
 {
     /**
      * @ORM\Id
-     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="integer")
      */
     private $id;
 
@@ -27,10 +34,10 @@ class Product implements EntityInterface
     private $label;
 
     /**
-     * @ORM\ManyToOne(targetEntity="TypeProduct")
-     * @ORM\JoinColumn(name="type_product_id", referencedColumnName="id")
-     **/
-    private $typeProduct;
+     * @ORM\Column(type="string", length=50)
+     * @var string
+     */
+    private $unit;
 
     /**
      * @return mixed
@@ -57,18 +64,18 @@ class Product implements EntityInterface
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getTypeProduct()
+    public function getUnit():string
     {
-        return $this->typeProduct;
+        return $this->unit;
     }
 
     /**
-     * @param mixed $typeProduct
+     * @param string $unit
      */
-    public function setTypeProduct($typeProduct)
+    public function setUnit(string $unit)
     {
-        $this->typeProduct = $typeProduct;
+        $this->unit = $unit;
     }
 }
