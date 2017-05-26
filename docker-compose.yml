@@ -1,0 +1,28 @@
+front:
+    image: nginx
+    ports:
+      - "81:80"
+    links:
+        - "engine:engine"
+    volumes:
+        - ".:/home/docker:ro"
+        - "./docker/front/default.conf:/etc/nginx/conf.d/default.conf:ro"
+
+engine:
+    build: ./docker/engine/
+    volumes:
+        - ".:/home/docker:rw"
+        - "./docker/engine/php.ini:/usr/local/etc/php/conf.d/custom.ini:ro"
+    links:
+        - "db:db"
+    working_dir: "/home/docker"
+
+db:
+    image: postgres:latest
+    ports:
+      - "5433:5432"
+    environment:
+      - "POSTGRES_ROOT_PASSWORD=kelptroot"
+      - "POSTGRES_PASSWORD=kelp"
+      - "POSTGRES_USER=groot"
+      - "POSTGRES_DATABASE=kelp"

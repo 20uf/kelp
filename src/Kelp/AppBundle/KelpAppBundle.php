@@ -16,6 +16,7 @@ class KelpAppBundle extends Bundle
             new MapperManagerCompiler()
         );
     }
+
     public function getParent()
     {
         return 'FOSUserBundle';

@@ -24,8 +24,6 @@ class SearchTypeStorageType extends AbstractType
         $builder
             ->add('text', TextType::class, ['required' => false])
             ->add('submit', SubmitType::class, ['label' => 'search']);
-
-        $options;
     }
 
     /**

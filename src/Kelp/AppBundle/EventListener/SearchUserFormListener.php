@@ -16,7 +16,7 @@ class SearchUserFormListener extends AbstractFormListener
      */
     public function onProcess(GenericEvent $event)
     {
-        $table =  $this->mapper->findLast();
+        $users =  $this->mapper->findLast();
 
         $form = $this->formFactory->create(SearchUserType::class, $this->dtoFactory->newInstance());
 
@@ -29,10 +29,9 @@ class SearchUserFormListener extends AbstractFormListener
             }
         }
 
-        $tableAction = $this->tableHelper->addTableAction($table, self::TABLE_ACTION);
+        $tableAction = $this->tableHelper->addTableAction($users, self::TABLE_ACTION);
 
-        $event->setArgument('search_result', $table);
-
+        $event->setArgument('search_result', $users);
         $event->setArgument('table_action', $tableAction);
         $event->setArgument('form_search', $form->createView());
     }
