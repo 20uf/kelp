@@ -23,7 +23,7 @@ class GenericController extends Controller
         }
         return $this->render(
             'KelpAppBundle:' . $element . ':' . $entity . '.html.twig',
-            $this->get('kelp.' . $entity . '.processor')->process()
+            $this->get('toto.' . $entity . '.processor')->process()
         );
     }
 

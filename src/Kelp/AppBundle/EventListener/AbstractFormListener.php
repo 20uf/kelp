@@ -4,7 +4,7 @@ namespace Kelp\AppBundle\EventListener;
 use Kelp\AppBundle\Entity\User;
 use Kelp\AppBundle\Factory\DTOFactoryInterface;
 use Kelp\AppBundle\Helper\FormErrorHelper;
-use Kelp\AppBundle\Helper\TableHelperInterface;
+use Kelp\AppBundle\Helper\TableActionHelperInterface;
 use Kelp\AppBundle\Mapper\AbstractDoctrineMapper;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
@@ -36,7 +36,7 @@ abstract class AbstractFormListener implements EventSubscriberInterface, Listene
     protected $formError;
 
     /**
-     * @var TableHelperInterface
+     * @var TableActionHelperInterface
      */
     protected $tableHelper;
 
@@ -55,7 +55,7 @@ abstract class AbstractFormListener implements EventSubscriberInterface, Listene
      * @param AbstractDoctrineMapper $mapper
      * @param Request                $request
      * @param FormErrorHelper        $formError
-     * @param TableHelperInterface   $tableHelper
+     * @param TableActionHelperInterface   $tableHelper
      */
     public function __construct(
         DTOFactoryInterface $dtoFactory,
@@ -63,7 +63,7 @@ abstract class AbstractFormListener implements EventSubscriberInterface, Listene
         AbstractDoctrineMapper $mapper,
         Request $request,
         FormErrorHelper $formError,
-        TableHelperInterface $tableHelper = null
+        TableActionHelperInterface $tableHelper = null
     ) {
     
 

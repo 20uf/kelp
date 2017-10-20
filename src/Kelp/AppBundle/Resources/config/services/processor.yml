@@ -49,6 +49,7 @@ services:
           - ['addSubscriber', ['@kelp.user_type_storage.edit_form.listener']]
           - ['addSubscriber', ['@kelp.storage.add_form.listener']]
 
+
     kelp.edit.user_type_storage.processor:
         class: Kelp\AppBundle\Processor\GenericProcessor
         calls:

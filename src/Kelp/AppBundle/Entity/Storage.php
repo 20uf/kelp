@@ -33,7 +33,7 @@ class Storage implements EntityInterface
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="torage")
+     * @ORM\ManyToOne(targetEntity="storage")
      * @ORM\JoinColumn(name="type_storage_id", referencedColumnName="id")
      **/
     private $typeStorage;

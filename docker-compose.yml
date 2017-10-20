@@ -19,6 +19,8 @@ engine:
 
 db:
     image: postgres:latest
+    volumes:
+      - ".:/home/kelpDb:rw"
     ports:
       - "5433:5432"
     environment:

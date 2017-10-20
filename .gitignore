@@ -4,3 +4,4 @@ web/
 doc/
 vendor/
 var/
+*.DS_Store

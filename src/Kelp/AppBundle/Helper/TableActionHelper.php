@@ -3,7 +3,7 @@ namespace Kelp\AppBundle\Helper;
 
 use Symfony\Component\Routing\Router;
 
-class TableActionHelper implements TableHelperInterface
+class TableActionHelper implements TableActionHelperInterface
 {
     /**
      * @var Router

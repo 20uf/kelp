@@ -18,7 +18,7 @@ class MapperManagerCompiler implements CompilerPassInterface
         $managerDefinition = $container->getDefinition(self::MANAGER_ID);
 
         $mappers = $container->findTaggedServiceIds('kelp_app.mapper');
-
+var_dump(1);die;
         foreach ($mappers as $mapperId => $mapperTags) {
             foreach ($mapperTags as $tag) {
                 if (isset($tag['type']) and isset($tag['class'])) {

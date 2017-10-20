@@ -1,7 +1,7 @@
 <?php
 namespace Kelp\AppBundle\Helper;
 
-interface TableHelperInterface
+interface TableActionHelperInterface
 {
     public function addTableAction(array $table, array $element);
 }
